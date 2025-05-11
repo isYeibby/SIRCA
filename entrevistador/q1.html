@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q2</title>
-    <link rel="stylesheet" href="/css/qs.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riesgo Cardiovascular</title>
+  <link rel="stylesheet" href="../css/styleqs.css">
 </head>
 <body>
-    <header>
-        <img src="/img/logo.png" alt="UNSIS Logo">
-    </header>
-    <div class="container">
-        <div class="section-title">Información del entrevistador</div>
-        <div class="form-group">
-            <label for="entrevistador">Entrevistador</label>
-            <input type="text" id="entrevistador" placeholder="Nombre del entrevistador">
-            <label for="caso">N° de caso</label>
-            <input type="text" id="caso" placeholder="Número de caso">
-            <label for="fecha">Fecha evaluación</label>
-            <input type="date" id="fecha">
-        </div>
-        <div class="section-title">Información Paciente</div>
-        <div class="form-group">
-            <label for="apellido-paterno">Apellido paterno</label>
-            <input type="text" id="apellido-paterno" placeholder="Apellido paterno">
-            <label for="apellido-materno">Apellido materno</label>
-            <input type="text" id="apellido-materno" placeholder="Apellido materno">
-            <label for="nombre">Nombre(s)</label>
-            <input type="text" id="nombre" placeholder="Nombre(s)">
-            <label for="edad">Edad (años cumplidos)</label>
-            <input type="number" id="edad" placeholder="Edad">
-            <label for="sexo">Sexo</label>
-            <input type="text" id="sexo" placeholder="Sexo">
-            <label for="licenciatura">Licenciatura</label>
-            <input type="text" id="licenciatura" placeholder="Licenciatura">
-            <label for="grupo">Grupo</label>
-            <input type="text" id="grupo" placeholder="Grupo">
-        </div>
-        <div class="tabs">
-            <button onclick="location.href='/entrevistador/q1.html'">⟵</button>
-            <button class="active" onclick="location.href='/entrevistador/q1.html'">Q1</button>
-            <button onclick="location.href='/entrevistador/q2.html'">Q2</button>
-            <button onclick="location.href='/entrevistador/q3.html'">Q3</button>
-            <button onclick="location.href='/entrevistador/q4.html'">Q4</button>
-            <button onclick="location.href='/entrevistador/q5.html'">Q5</button>
-            <button onclick="location.href='/entrevistador/q2.html'">⟶</button>
-        </div>
+
+  <div class="encabezado">
+    <img src="logo.png" alt="Logo UNISIS">
+    <h1>Riesgo Cardiovascular</h1>
+  </div>
+
+  <div class="contenedor-formulario">
+    <div class="titulo-seccion">Información del entrevistador</div>
+
+    <div class="campo">
+      <label for="entrevistador">Entrevistador:</label>
+      <input type="text" id="entrevistador" name="entrevistador">
     </div>
+
+    <div class="fila-doble">
+      <div class="campo">
+        <label for="numero-caso">N° de caso:</label>
+        <input type="text" id="numero-caso" name="numero-caso">
+      </div>
+      <div class="campo">
+        <label for="fecha-evaluacion">Fecha evaluación:</label>
+        <input type="date" id="fecha-evaluacion" name="fecha-evaluacion">
+      </div>
+    </div>
+
+    <div class="titulo-seccion">Información Paciente</div>
+
+    <div class="fila-doble">
+      <div class="campo">
+        <label for="apellido-paterno">Apellido paterno:</label>
+        <input type="text" id="apellido-paterno" name="apellido-paterno">
+      </div>
+      <div class="campo">
+        <label for="apellido-materno">Apellido materno:</label>
+        <input type="text" id="apellido-materno" name="apellido-materno">
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="nombre">Nombre(s):</label>
+      <input type="text" id="nombre" name="nombre">
+    </div>
+
+    <div class="fila-doble">
+      <div class="campo">
+        <label for="licenciatura">Licenciatura:</label>
+        <input type="text" id="licenciatura" name="licenciatura">
+      </div>
+      <div class="campo">
+        <label for="grupo">Grupo:</label>
+        <input type="text" id="grupo" name="grupo">
+      </div>
+    </div>
+
+    <div class="fila-doble">
+      <div class="campo">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad">
+      </div>
+      <div class="campo">
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+          <option value="">Seleccione</option>
+          <option value="F">Femenino</option>
+          <option value="M">Masculino</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

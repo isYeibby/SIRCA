@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #eaf2fb;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .encabezado {
+    background-color: #26457b;
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .encabezado img {
+    height: 80px;
+  }
+  
+  .encabezado h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .titulo-seccion {
+    background-color: #3a568c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin: 20px 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+
+  .contenedor-formulario {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  
+
+  .campo {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .campo label {
+    width: 180px;
+    font-weight: 600;
+    color: #2b2b2b;
+  }
+  
+  .campo input,
+  .campo select {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #b3cbe4;
+    color: #000;
+    font-size: 14px;
+  }
+  
+  .fila-doble {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .navegacion {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .navegacion div {
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #26457b;
+  }
+  
+  .navegacion div.activo {
+    background-color: #26457b;
+    color: white;
+  }
+
+
+
+
+  
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body {
+    background-color: #eaf2fb;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .encabezado {
+    background-color: #26457b;
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .encabezado img {
+    height: 80px;
+  }
+  
+  .encabezado h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  
+  .titulo-seccion {
+    background-color: #3a568c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin: 20px 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .contenedor-formulario {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  
+  .campo {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .campo label {
+    width: 180px;
+    font-weight: 600;
+    color: #2b2b2b;
+  }
+  
+  .campo input,
+  .campo select {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #b3cbe4;
+    color: #000;
+    font-size: 14px;
+  }
+  
+  .fila-doble {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .navegacion {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .navegacion div {
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #26457b;
+  }
+  
+  .navegacion div.activo {
+    background-color: #26457b;
+    color: white;
+  }
+    
