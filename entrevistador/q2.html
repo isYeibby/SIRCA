@@ -1,90 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q2</title>
-    <link rel="stylesheet" href="/css/qs.css">
+  <meta charset="UTF-8">
+  <title>Riesgo Cardiovascular - Detalles</title>
+  <link rel="stylesheet" href="../css/styleqs.css">
 </head>
 <body>
-    <header>
-        <img src="/img/logo.png" alt="UNSIS Logo">
-    </header>
-    <div class="container">
-        <h2>Antecedentes Patológicos</h2>
-        <div class="section-title">HTA</div>
-        <div class="form-group">
-            <div class="family-history">
-                <div class="options">
-                    <button>No</button>
-                    <label for="parentesco">Parentesco</label>
-                    <select id="relacion">
-                        <option value="madre">MADRE</option>
-                        <option value="padre">PADRE</option>
-                        <option value="hermano">HERMANO</option>
-                        <option value="hermana">HERMANA</option>
-                    </select>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="section-title">DIABETES</div>
-        <div class="form-group">
-            <div class="family-history">
-                <div class="options">
-                    <button>No</button>
-                    <label for="parentesco">Parentesco</label>
-                    <select id="relacion">
-                        <option value="madre">MADRE</option>
-                        <option value="padre">PADRE</option>
-                        <option value="hermano">HERMANO</option>
-                        <option value="hermana">HERMANA</option>
-                    </select>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="section-title">CORONARIAS</div>
-        <div class="form-group">
-            <div class="family-history">
-                <div class="options">
-                    <button>No</button>
-                    <label for="parentesco">Parentesco</label>
-                    <select id="relacion">
-                        <option value="madre">MADRE</option>
-                        <option value="padre">PADRE</option>
-                        <option value="hermano">HERMANO</option>
-                        <option value="hermana">HERMANA</option>
-                    </select>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="section-title">NEOPLASIA</div>
-        <div class="form-group">
-            <div class="family-history">
-                <div class="options">
-                    <button>No</button>
-                    <label for="parentesco">Parentesco</label>
-                    <select id="relacion">
-                        <option value="madre">MADRE</option>
-                        <option value="padre">PADRE</option>
-                        <option value="hermano">HERMANO</option>
-                        <option value="hermana">HERMANA</option>
-                    </select>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-        <div class="tabs">
-            <button onclick="location.href='/entrevistador/q1.html'">⟵</button>
-            <button onclick="location.href='/entrevistador/q1.html'">Q1</button>
-            <button class="active" onclick="location.href='/entrevistador/q2.html'">Q2</button>
-            <button onclick="location.href='/entrevistador/q3.html'">Q3</button>
-            <button onclick="location.href='/entrevistador/q4.html'">Q4</button>
-            <button onclick="location.href='/entrevistador/q5.html'">Q5</button>
-            <button onclick="location.href='/entrevistador/q2.html'">⟶</button>
-        </div>
+  <div class="encabezado">
+    <img src="logo.png" alt="Logo">
+    <h1>Riesgo Cardiovascular</h1>
+  </div>
+
+  <div class="titulo-seccion">Antecedentes Patológicos</div>
+
+  <div class="contenedor-formulario">
+    <div class="campo">
+      <label>Familiares con XXX</label>
+      <input type="text" placeholder="Especifique">
     </div>
+
+    <div class="campo">
+      <label>HTA</label>
+      <select>
+        <option>No</option>
+        <option>Sí</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Cantidad</label>
+      <input type="number" min="0" value="1">
+    </div>
+
+    <div class="campo">
+      <label>Parentesco</label>
+      <select>
+        <option>PADRE</option>
+        <option>MADRE</option>
+        <option>ABUELOS</option>
+        <option>HERMANO/A</option>
+      </select>
+    </div>
+
+    <div style="text-align:center; margin-top: 20px;">
+      <button onclick="alert('Continuar')" style="padding: 10px 20px; border-radius: 8px; background-color:#3a568c; color: white; border: none;">Continuar</button>
+    </div>
+  </div>
+
+  <div class="navegacion">
+    <div>Acción 1</div>
+    <div class="activo">Acción 2</div>
+    <div>Acción 3</div>
+    <div>Acción 4</div>
+    <div>Acción 5</div>
+  </div>
 </body>
 </html>
