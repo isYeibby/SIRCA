@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q4</title>
-    <link rel="stylesheet" href="/css/qs.css">
+  <meta charset="UTF-8">
+  <title>Mediciones Corporales</title>
+  <link rel="stylesheet" href="../css/styleqs.css">
 </head>
 <body>
-    <header>
-        <img src="/img/logo.png" alt="UNSIS Logo">
-    </header>
-    <div class="container">
-        <h2>Mediciones corporales</h2>
-        <div class="form-group">
-            <label for="Peso">Peso</label>
-            <input type="text" id="Peso" placeholder="Kg">
-            <label for="Talla">Talla</label>
-            <input type="text" id="Talla" placeholder="Cm">
-            <label for="IMC">IMC</label>
-            <input type="text" id="IMC">
-            <label for="CategoriaIMC">Categoria según el IMC</label>
-            <input type="text" id="CategoriaIMC">
-            <label for="circunferenciacintura">Circunferencia cintura</label>
-            <input type="text" id="circunferenciacintura" placeholder="Cm">
-            <label for="circunferenciacadera">Circunferencia cadera</label>
-            <input type="text" id="circunferenciacadera" placeholder="Cm">
-            <label for="Ccint">Riesgo por Ccint</label>
-            <input type="text" id="Ccint">
-            <label for="Ccad">Riesgo por Ccad</label>
-            <input type="text" id="Ccad">
-        </div>
-        <div class="tabs">
-            <button onclick="location.href='/entrevistador/q1.html'">⟵</button>
-            <button onclick="location.href='/entrevistador/q1.html'">Q1</button>
-            <button onclick="location.href='/entrevistador/q2.html'">Q2</button>
-            <button onclick="location.href='/entrevistador/q3.html'">Q3</button>
-            <button class="active" onclick="location.href='/entrevistador/q4.html'">Q4</button>
-            <button onclick="location.href='/entrevistador/q5.html'">Q5</button>
-            <button onclick="location.href='/entrevistador/q2.html'">⟶</button>
-        </div>
+  <div class="encabezado">
+    <img src="logo.png" alt="Logo">
+    <h1>Riesgo Cardiovascular</h1>
+  </div>
+
+  <div class="titulo-seccion">Mediciones corporales</div>
+  <div class="contenedor-formulario">
+    <div class="campo">
+      <label>Peso en kg.</label><input type="text">
+      <label>Talla mts.</label><input type="text">
+      <label>Categoría según el IMC</label><input type="text">
     </div>
+    <div class="campo">
+      <label>IMC</label><input type="text">
+      <label>Riesgo por Cintura</label><input type="text">
+      <label>Riesgo por Cadera</label><input type="text">
+    </div>
+    <div class="campo">
+      <label>Circunferencia cintura (cm)</label><input type="text">
+      <label>Circunferencia cadera (cm)</label><input type="text">
+    </div>
+  </div>
+
+  <div class="navegacion">
+    <div>Acción 1</div><div class="activo">Acción 2</div><div>Acción 3</div><div>Acción 4</div><div>Acción 5</div>
+  </div>
 </body>
 </html>

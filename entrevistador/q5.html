@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q5</title>
-    <link rel="stylesheet" href="/css/qs.css">
+  <meta charset="UTF-8">
+  <title>Actividad Física</title>
+  <link rel="stylesheet" href="../css/styleqs.css">
 </head>
 <body>
-    <header>
-        <img src="/img/logo.png" alt="UNSIS Logo">
-    </header>
-    <div class="container">
-        <h2>Actividad física</h2>
-        <div class="form-group">
-            <label for="tiempoactividad">Tipo de actividad física que realiza</label>
-            <input type="text" id="tiempoactividad">
-            <label for="diasrealizados">Dias de la semana que la realiza</label>
-            <input type="text" id="diasrealizados">
-            <label for="minutosrealizados">Minutos al dia que la realiza</label>
-            <input type="text" id="minutosrealizados">
-            <label for="promedio">Promedio</label>
-            <input type="text" id="promedio">
-            <label for="nivelactividad">Nivel de actividad física</label>
-            <input type="text" id="nivelactividad">
-        </div>
-        <div class="tabs">
-            <button onclick="location.href='/entrevistador/q1.html'">⟵</button>
-            <button onclick="location.href='/entrevistador/q1.html'">Q1</button>
-            <button onclick="location.href='/entrevistador/q2.html'">Q2</button>
-            <button onclick="location.href='/entrevistador/q3.html'">Q3</button>
-            <button onclick="location.href='/entrevistador/q4.html'">Q4</button>
-            <button class="active" onclick="location.href='/entrevistador/q5.html'">Q5</button>
-            <button onclick="location.href='/entrevistador/q2.html'">⟶</button>
-        </div>
+  <div class="encabezado">
+    <img src="logo.png" alt="Logo">
+    <h1>Riesgo Cardiovascular</h1>
+  </div>
+
+  <div class="titulo-seccion">Actividad física</div>
+  <div class="contenedor-formulario">
+    <div class="campo">
+      <label>Tipo de actividad física que realiza</label><input type="text">
+      <label>Días de la semana que la realiza</label><input type="text">
+      <label>Minutos al día que la realiza</label><input type="text">
     </div>
+    <div class="campo">
+      <label>Promedio</label><input type="text">
+      <label>Nivel de actividad física</label><input type="text">
+    </div>
+  </div>
+
+  <div class="navegacion">
+    <div>Acción 1</div><div>Acción 2</div><div class="activo">Acción 3</div><div>Acción 4</div><div>Acción 5</div>
+  </div>
 </body>
 </html>
