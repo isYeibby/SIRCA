@@ -194,3 +194,46 @@ table a:hover {
     align-items: center;
     margin-top: 20px;
 }
+
+/* Responsive para tabletas o celulares */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .sidebar img {
+        display: none;
+    }
+
+    .sidebar a {
+        font-size: 0.9em;
+        padding: 10px;
+        margin: 0;
+        width: auto;
+    }
+
+    .logout {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 70px;
+        padding: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
