@@ -9,56 +9,9 @@ body {
   align-items: center;
   height: 100vh;
 }
-  
-.contenedor {
-  background-color: rgba(34, 29, 29, 0.2);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
 
- .contenedor {
-   max-width: 400px;
-   width: 100%;
-   margin: auto;
- }
-  .contenedor h2 {
-   color: white;
-   margin-bottom: 20px;
- }
- 
-input {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  background: white;
-  color: black;
-}
- input:focus{
-  outline: none;
-  border-color: crimson;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #5583ec;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #8dc2e6;
-}
-
- .video-background {
+/* Fondo de video */
+.video-background {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -84,8 +37,81 @@ button:hover {
   padding-top: 30vh;
 }
 
+/* Contenedor principal */
+.contenedor {
+  background-color: rgba(34, 29, 29, 0.2);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+.contenedor h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
 .contenedor a {
   font-size: smaller;
   text-decoration: none;
   color: white;
+}
+
+/* Inputs con grupo e íconos */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  outline: none;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Botón */
+button {
+  background: #28a745;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #218838;
+}
+
+/* Opciones y texto */
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
 }

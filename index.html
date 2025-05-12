@@ -2,33 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="/css/loggin.css">
+    <title>Login Salud</title>
+  <link rel="stylesheet" href="./css/loggin.css">
 </head>
 <body>
   <div class="video-background">
     <video autoplay muted loop playsinline>
-      <source src="/img/red.mp4" type="video/mp4"/>
+      <source src="./img/red.mp4" type="video/mp4"/>
       Tu navegador no soporta el video.
     </video>
     <div class="contenido">
       <div class="contenedor">
         <h2>Iniciar Sesión</h2>
+        
         <form id="loginForm">
-          <label>Usuario</label>
-          <br>
-          <input type="text" id="usuario" placeholder="Usuario" required>
-          <label>Contraseña</label>
-          <br>
-          <input type="password" id="contrasena" placeholder="Contraseña" required>
-          <button type="submit">Entrar</button>
-          <br>
-          <br>
-          <a href="recover.html">Olvide mi Contraseña</a>
+          <div class="input-group">
+            <span class="icon">👤</span>
+            <input type="text" id="username" placeholder="Usuario" required>
+          </div>
+
+          <div class="input-group">
+            <span class="icon">🔒</span>
+            <input type="password" id="password" placeholder="Contraseña" required>
+          </div>
+
+          <div class="options">
+            <label><input type="checkbox"> Recordarme</label>
+            <a href="#">Olvidé mi contraseña</a>
+          </div>
+
+          <button id="loginBtn">Iniciar Sesión</button>
         </form>
       </div>
     </div>
   </div>
-  <script src="/js/loggin.js"></script>
+  <script src="./js/loggin.js"></script>
 </body>
 </html>
