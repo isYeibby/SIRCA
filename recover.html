@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+    <main>
+        <p>Para reajustar su contraseña, envíe su nombre de usuario o su dirección de correo electrónico. Si podemos encontrarlo en la base de datos, le enviaremos un email con instrucciones para poder acceder de nuevo.</p>
+
+        <section>
+            <h2>Buscar por nombre de usuario</h2>
+            <form action="recuperar.php" method="POST">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" id="usuario" name="usuario">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Buscar por dirección email</h2>
+            <form action="recuperar.php" method="POST">
+                <label for="email">Dirección Email</label>
+                <input type="email" id="email" name="email">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+        <section>
+            <h2>Volver a la página de inicio</h2>
+            <a href="index.html">Volver</a>
+
+    </main>
+</body>
+</html>
