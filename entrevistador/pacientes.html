@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacientes</title>        
-    <link rel="stylesheet" href="/SIRCA/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pacientes.css">
 </head>
 <body>
     <div class="sidebar">
@@ -12,7 +13,7 @@
         <a href="/entrevistador/inicio.html">Inicio</a>
         <a href="#">Nuevo</a>
         <a href="/entrevistador/pacientes.html">Pacientes</a>
-        <a href="/entrevistador/perfil.html">Perfil</a>
+        <a href="/entrevistador/perfil.htm">Perfil</a>
         <div class="logout">⟵</div>
     </div>
 
@@ -23,6 +24,15 @@
         </div>
         <div class="content">
             <h2 class="rounded-header">Pacientes</h2>
+            <div class="legend">
+                
+                <p>
+                    <strong>Significado de los colores:</strong>
+                    <span class="color-box terminado"></span> <strong>Verde:</strong> Terminado, 
+                    <span class="color-box enProceso"></span> <strong>Naranja:</strong> En proceso, 
+                    <span class="color-box sinIniciar"></span> <strong>Rojo:</strong> Sin iniciar
+                </p>
+            </div>
             <div class="table-container">
                 <table>
                     <thead>
@@ -34,11 +44,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Aquí se pueden agregar filas dinámicamente -->
                     </tbody>
                 </table>
             </div>
+            
         </div>
     </div>
+
+    <script src="/js/pacientes.js"></script>
 </body>
 </html>

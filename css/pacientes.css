@@ -1,0 +1,124 @@
+/* Estilo para la tabla */
+.table-container {
+    margin: 0 auto;
+    width: 90%; 
+    overflow-x: auto;
+}
+
+table {
+    width: 90%; 
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los enlaces según el estado */
+a.terminado {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+a.enProceso {
+    background-color: #ffc107; /* Naranja */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+a.sinIniciar {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+a.terminado:hover,
+a.en\ proceso:hover,
+a.sin\ iniciar:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* Estilo para la leyenda */
+.legend {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.legend h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+}
+
+.legend li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para los cuadros de colores */
+.color-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.color-box.terminado {
+    background-color: #28a745; /* Verde */
+}
+
+.color-box.enProceso {
+    background-color: #ffc107; /* Naranja */
+}
+
+.color-box.sinIniciar {
+    background-color: #dc3545; /* Rojo */
+}
