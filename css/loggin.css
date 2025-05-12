@@ -115,3 +115,47 @@ button:hover {
 p {
   font-size: 14px;
 }
+
+
+
+/* Estilo para botones de rol */
+.role-button {
+  display: block;
+  width: 250px;
+  padding: 20px;
+  margin: 15px auto;
+  font-size: 20px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.role-button:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor rol */
+.contenedor-rol {
+  background-color: rgba(34, 29, 29, 0.2);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.contenedor-rol h2 {
+  color: white;
+  margin-bottom: 25px;
+}
+
+.contenedor-rol a {
+  font-size: smaller;
+  text-decoration: none;
+  color: white;
+}
