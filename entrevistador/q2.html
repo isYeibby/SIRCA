@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Riesgo Cardiovascular - Detalles</title>
-  <link rel="stylesheet" href="../css/styleqs.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antecedentes Patológicos</title>
+  <link rel="stylesheet" href="/css/styleqs.css" />
 </head>
 <body>
-  <div class="encabezado">
-    <img src="../img/logo.png" alt="Logo">
-    <h1>Riesgo Cardiovascular</h1>
-  </div>
 
-  <div class="titulo-seccion">Antecedentes Patológicos</div>
+  <header class="encabezado">
+    <img src="/img/logo.png" alt="Logo" />
+    <h1>Antecedentes Patológicos</h1>
+  </header>
 
-  <div class="contenedor-formulario">
-    <div class="campo">
-      <label>Familiares con XXX</label>
-      <input type="text" placeholder="Especifique">
-    </div>
+  <main class="zona-principal">
+    <div class="flecha flecha-izquierda">&larr;</div>
 
-    <div class="campo">
-      <label>HTA</label>
-      <select>
-        <option>No</option>
-        <option>Sí</option>
-      </select>
-    </div>
+    <form class="contenedor-formulario">
 
-    <div class="campo">
-      <label>Cantidad</label>
-      <input type="number" min="0" value="1">
-    </div>
+      <!-- Sección de antecedentes con un subtítulo para HTA -->
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">HTA</h2>
+        <button type="button" class="agregar-linea" onclick="agregarLinea('hta')">+</button>
+      </div>
+      <div class="campo" id="hta-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
 
-    <div class="campo">
-      <label>Parentesco</label>
-      <select>
-        <option>PADRE</option>
-        <option>MADRE</option>
-        <option>ABUELOS</option>
-        <option>HERMANO/A</option>
-      </select>
-    </div>
+      <!-- Sección de antecedentes con un subtítulo para Diabetes -->
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Diabetes</h2>
+        <button type="button" class="agregar-linea" onclick="agregarLinea('diabetes')">+</button>
+      </div>
+      <div class="campo" id="diabetes-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
 
-    <div style="text-align:center; margin-top: 20px;">
-      <button onclick="alert('Continuar')" style="padding: 10px 20px; border-radius: 8px; background-color:#3a568c; color: white; border: none;">Continuar</button>
-    </div>
-  </div>
+      <!-- Sección de antecedentes con un subtítulo para Coronarias -->
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Coronarias</h2>
+        <button type="button" class="agregar-linea" onclick="agregarLinea('coronarias')">+</button>
+      </div>
+      <div class="campo" id="coronarias-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
 
-  <!-- Navegación con botones -->
-  <div class="navegacion" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
-    <button onclick="location.href='q1.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 1</button>
-    <button onclick="location.href='q2.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #3a568c; color: white; cursor: pointer;">Acción 2</button>
-    <button onclick="location.href='q3.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 3</button>
-    <button onclick="location.href='q4.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 4</button>
-    <button onclick="location.href='q5.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 5</button>
-  </div>
+      <!-- Sección de antecedentes con un subtítulo para Neoplasias -->
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Neoplasias</h2>
+        <button type="button" class="agregar-linea" onclick="agregarLinea('neoplasias')">+</button>
+      </div>
+      <div class="campo" id="neoplasias-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
+
+      <div class="boton-centrado">
+        <a href="/entrevistador/menuQ.html">
+          <button type="button">Guardar</button>
+        </a>
+      </div>
+    </form>
+
+    <div class="flecha flecha-derecha">&rarr;</div>
+  </main>
+
+  <!-- Referencia al archivo JS externo -->
+  <script src="/js/antecedentes.js"></script>
 </body>
 </html>

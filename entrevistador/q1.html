@@ -1,71 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riesgo Cardiovascular</title>
-  <link rel="stylesheet" href="../css/styleqs.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Información Personal</title>
+  <link rel="stylesheet" href="/css/styleqs.css" />
 </head>
 <body>
 
-  <div class="encabezado">
-    <img src="../img/logo.png" alt="Logo UNISIS">
-    <h1>Riesgo Cardiovascular</h1>
-  </div>
+  <header class="encabezado">
+    <img src="/img/logo.png" alt="Logo UNISIS" />
+    <h1>Información Personal</h1>
+  </header>
 
-  <div class="contenedor-formulario">
-    <div class="titulo-seccion">Información del entrevistador</div>
+  <main class="zona-principal">
+    <div class="flecha flecha-izquierda">&larr;</div>
 
-    <div class="campo">
-      <label for="entrevistador">Entrevistador:</label>
-      <input type="text" id="entrevistador" name="entrevistador">
-    </div>
+    <form class="contenedor-formulario">
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Información del Entrevistador</h2>
+      </div>  
 
-    <div class="fila-doble">
+      <div class="campo">
+        <label for="entrevistador">Entrevistador:</label>
+        <input type="text" id="entrevistador" name="entrevistador" />
+      </div>
+
       <div class="campo">
         <label for="numero-caso">N° de caso:</label>
-        <input type="text" id="numero-caso" name="numero-caso">
+        <input type="text" id="numero-caso" name="numero-caso" />
       </div>
+
       <div class="campo">
         <label for="fecha-evaluacion">Fecha evaluación:</label>
-        <input type="date" id="fecha-evaluacion" name="fecha-evaluacion">
+        <input type="date" id="fecha-evaluacion" name="fecha-evaluacion" />
       </div>
-    </div>
 
-    <div class="titulo-seccion">Información Paciente</div>
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Información del Paciente</h2>
+      </div>
 
-    <div class="fila-doble">
       <div class="campo">
         <label for="apellido-paterno">Apellido paterno:</label>
-        <input type="text" id="apellido-paterno" name="apellido-paterno">
+        <input type="text" id="apellido-paterno" name="apellido-paterno" />
       </div>
+
       <div class="campo">
         <label for="apellido-materno">Apellido materno:</label>
-        <input type="text" id="apellido-materno" name="apellido-materno">
+        <input type="text" id="apellido-materno" name="apellido-materno" />
       </div>
-    </div>
 
-    <div class="campo">
-      <label for="nombre">Nombre(s):</label>
-      <input type="text" id="nombre" name="nombre">
-    </div>
+      <div class="campo">
+        <label for="nombre">Nombre(s):</label>
+        <input type="text" id="nombre" name="nombre" />
+      </div>
 
-    <div class="fila-doble">
       <div class="campo">
         <label for="licenciatura">Licenciatura:</label>
-        <input type="text" id="licenciatura" name="licenciatura">
+        <input type="text" id="licenciatura" name="licenciatura" />
       </div>
+
       <div class="campo">
         <label for="grupo">Grupo:</label>
-        <input type="text" id="grupo" name="grupo">
+        <input type="text" id="grupo" name="grupo" />
       </div>
-    </div>
 
-    <div class="fila-doble">
       <div class="campo">
         <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad">
+        <input type="number" id="edad" name="edad" />
       </div>
+
       <div class="campo">
         <label for="sexo">Sexo:</label>
         <select id="sexo" name="sexo">
@@ -74,32 +78,16 @@
           <option value="M">Masculino</option>
         </select>
       </div>
-    </div>
-  </div>
 
-  <!-- Navegación inferior con botones de acción -->
-  <div style="display: flex; justify-content: space-around; padding: 15px; background-color: #e9e9e9; border-top: 1px solid #ccc; margin-top: 40px;">
-    <button onclick="location.href='q1.html'" 
-      style="background-color: white; border: 2px solid #ccc; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-weight: bold;">
-      Acción 1
-    </button>
-    <button onclick="location.href='q2.html'" 
-      style="background-color: white; border: 2px solid #ccc; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-weight: bold;">
-      Acción 2
-    </button>
-    <button onclick="location.href='q3.html'" 
-      style="background-color: white; border: 2px solid #ccc; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-weight: bold;">
-      Acción 3
-    </button>
-    <button onclick="location.href='q4.html'" 
-      style="background-color: white; border: 2px solid #ccc; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-weight: bold;">
-      Acción 4
-    </button>
-    <button onclick="location.href='q5.html'" 
-      style="background-color: white; border: 2px solid #ccc; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-weight: bold;">
-      Acción 5
-    </button>
-  </div>
+      <div class="boton-centrado">
+        <a href="/entrevistador/menuQ.html">
+          <button type="button">Guardar</button>
+        </a>
+      </div>
 
+    </form>
+
+    <div class="flecha flecha-derecha">&rarr;</div>
+  </main>
 </body>
 </html>

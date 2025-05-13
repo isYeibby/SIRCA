@@ -1,50 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Factores de Riesgo</title>
-  <link rel="stylesheet" href="../css/styleqs.css">
+  <link rel="stylesheet" href="/css/styleqs.css" />
 </head>
 <body>
-  <div class="encabezado">
-    <img src="../img/logo.png" alt="Logo">
-    <h1>Riesgo Cardiovascular</h1>
-  </div>
 
-  <div class="titulo-seccion">Análisis de Factores de Riesgo Cardiovascular</div>
-  <div class="contenedor-formulario">
-    <div class="campo">
-      <label>Presión arterial</label>
-    </div>
-    <div class="campo">
-      <label>Sistólica</label><input type="text">
-      <label>Diastólica</label><input type="text">
-      <label>Detección oportuna</label><input type="text">
-    </div>
-    <div class="campo">
-      <label>Perfil Lipídico</label>
-    </div>
-    <div class="campo">
-      <label>Triglicéridos</label><input type="text">
-      <label>Colesterol</label><input type="text">
-    </div>
-    <div class="campo">
-      <label>Tabaquismo</label>
-    </div>
-    <div class="campo">
-      <label>Número de cigarros al día</label><input type="text">
-      <label>Nivel de tabaquismo</label><input type="text">
-      <label>Tiempo de exposición (meses)</label><input type="text">
-    </div>
-  </div>
+  <header class="encabezado">
+    <img src="/img/logo.png" alt="Logo">
+    <h1>Factores de Riesgo</h1>
+  </header>
 
-  <!-- Navegación con botones -->
-  <div class="navegacion" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
-    <button onclick="location.href='q1.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #3a568c; color: white; cursor: pointer;">Acción 1</button>
-    <button onclick="location.href='q2.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 2</button>
-    <button onclick="location.href='q3.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 3</button>
-    <button onclick="location.href='q4.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 4</button>
-    <button onclick="location.href='q5.html'" style="padding: 10px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: white; cursor: pointer;">Acción 5</button>
-  </div>
+  <main class="zona-principal">
+    <div class="flecha flecha-izquierda">&larr;</div>
+
+    <form class="contenedor-formulario">
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Presión Arterial</h2>
+      </div>
+
+      <div class="campo">
+        <label for="presion-arterial">Presión arterial:</label>
+        <input type="text" id="presion-arterial" name="presion-arterial" />
+      </div>
+
+      <div class="campo">
+        <label for="sistolica">Sistólica:</label>
+        <input type="text" id="sistolica" name="sistolica" />
+      </div>
+
+      <div class="campo">
+        <label for="diastolica">Diastólica:</label>
+        <input type="text" id="diastolica" name="diastolica" />
+      </div>
+
+      <div class="campo">
+        <label for="deteccion-oportuna">Detección oportuna:</label>
+        <input type="text" id="deteccion-oportuna" name="deteccion-oportuna" />
+      </div>
+
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Perfil Lipídico</h2>
+      </div>
+
+      <div class="campo">
+        <label for="perfil-lipidico">Perfil lipídico:</label>
+        <input type="text" id="perfil-lipidico" name="perfil-lipidico" />
+      </div>
+
+      <div class="campo">
+        <label for="trigliceridos">Triglicéridos:</label>
+        <input type="text" id="trigliceridos" name="trigliceridos" />
+      </div>
+
+      <div class="campo">
+        <label for="colesterol">Colesterol:</label>
+        <input type="text" id="colesterol" name="colesterol" />
+      </div>
+
+      <div class="subtitulo-con-boton">
+        <h2 class="subtitulo">Tabaquismo</h2>
+      </div>
+      
+
+      <div class="campo">
+        <label for="tabaquismo">Tabaquismo:</label>
+        <input type="text" id="tabaquismo" name="tabaquismo" />
+      </div>
+
+      <div class="campo">
+        <label for="cigarros-dia">Número de cigarros al día:</label>
+        <input type="text" id="cigarros-dia" name="cigarros-dia" />
+      </div>
+
+      <div class="campo">
+        <label for="nivel-tabaquismo">Nivel de tabaquismo:</label>
+        <input type="text" id="nivel-tabaquismo" name="nivel-tabaquismo" />
+      </div>
+
+      <div class="campo">
+        <label for="tiempo-exposicion">Tiempo de exposición (meses):</label>
+        <input type="text" id="tiempo-exposicion" name="tiempo-exposicion" />
+      </div>
+
+      <div class="boton-centrado">
+        <a href="/entrevistador/menuQ.html">
+          <button type="button">Guardar</button>
+        </a>
+      </div>
+    </form>
+
+    <div class="flecha flecha-derecha">&rarr;</div>
+  </main>
+
 </body>
 </html>
