@@ -1,50 +1,108 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Principal</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/menus.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menú Q - UNSIS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/menuQ.css" />
 </head>
 <body>
     <div class="sidebar">
-        <img src="../img/logo.png" alt="UNSIS Logo">
+        <img src="/img/logo.png" alt="UNSIS Logo" />
         <a href="/entrevistador/inicio.html">Inicio</a>
         <a href="/entrevistador/pacientes.html">Pacientes</a>
         <a href="/entrevistador/perfil.html">Perfil</a>
-        <div class="logout">⟵</div>
+
+        <button class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false" onclick="toggleTheme()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+        </button>
+
+        <a href="/index.html" class="logout">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="40" height="40" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M15 3h4a2 2 0 0 1 2 2v4m0 4v4a2 2 0 0 1-2 2h-4m-3-4 4-4-4-4m4 4H3"></path>
+            </svg>
+        </a>
     </div>
-    <div class="main-content">
-        <div class="header">
-            <span>Menú</span>
-            <span class="profile-icon">👤</span>
+
+
+    <main class="main-content">
+        <header class="header">
+            <span>Menú Principal</span>
+            <div class="profile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z" />
+                </svg>
+            </div>
+        </header>
+
+
+        <!-- Contenedor centrado -->
+        <div class="central-container">
+
+            <!-- Información del paciente -->
+            <div class="patient-info">
+                <div class="patient-header">
+                    <div class="patient-avatar">
+                        <img src="/img/perfil.png" alt="Foto del paciente" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                        <!-- SVG oculto por defecto -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display:none;">
+                            <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5z" />
+                            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                        </svg>
+                    </div>
+                    <h2>Juan Pérez</h2>
+                </div>
+                <div class="patient-details">
+                    <p><strong>Última entrevista:</strong> 2025-05-20</p>
+                </div>
+            </div>
+
+            <!-- Grid del menú principal -->
+            <section class="card-grid" role="list">
+                <article class="card" role="listitem" tabindex="0">
+                    <h3>📄</h3>
+                    <p>Información Personal</p>
+                </article>
+                <article class="card" role="listitem" tabindex="0">
+                    <h3>🧬</h3>
+                    <p>Antecedentes Patológicos</p>
+                </article>
+                <article class="card" role="listitem" tabindex="0">
+                    <h3>⚠️</h3>
+                    <p>Factores de Riesgo</p>
+                </article>
+                <article class="card" role="listitem" tabindex="0">
+                    <h3>📏</h3>
+                    <p>Mediciones Corporales</p>
+                </article>
+                <article class="card" role="listitem" tabindex="0">
+                    <h3>🏃</h3>
+                    <p>Actividad Física</p>
+                </article>
+            </section>
+
+            <!-- Botones adicionales -->
+            <div class="extra-buttons">
+                <button class="btn-primary">Ver Expediente</button>
+                <button class="btn-secondary">Agregar Nota</button>
+                <button class="btn-secondary">Enviar Reporte</button>
+            </div>
+
         </div>
-        <div class="content">
-            <div class="profile">
-                <img src="/img/perfil.jpg" alt="Perfil" style="width: 80%; border-radius: 50%;">
-            </div>
-            <div class="profile-info">
-                <p>Nombre del Usuario</p>
-                <p>Información adicional</p>
-            </div>
-            <div class="legend">
-                <p>
-                    <strong>Cuestionario:</strong><br><br>
-                    <span class="color-box terminado"></span> <strong>Azul oscuro:</strong> Terminado
-                    <span class="color-box enProceso"></span> <strong>Azul claro:</strong> En proceso 
-                    <span class="color-box sinIniciar"></span> <strong>Gris:</strong> Sin iniciar
-                </p>
-            </div>
-            <div class="circle-container">
-                <div class="circle">Información Personal</div>
-                <div class="circle">Antecedentes Patológicos</div>
-                <div class="circle">Factores de Riesgo</div>
-                <div class="circle">Mediciones Corporales</div>
-                <div class="circle">Actividad Física</div>
-            </div>
-        </div>
-    </div>
+    </main>
+    <script src="/js/theme.js"></script>
     <script src="/js/menus.js"></script>
 </body>
 </html>
