@@ -10,7 +10,8 @@ table {
     border-collapse: collapse;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    text-align: left;
+    text-align: center;
+    margin: 20px auto; /* Centrar la tabla */
 }
 
 thead {
@@ -20,6 +21,8 @@ thead {
 th, td {
     padding: 10px;
     border: 1px solid #ddd;
+    text-align: center !important;
+    vertical-align: middle;
 }
 
 th {
@@ -28,6 +31,12 @@ th {
 
 tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+/* Alinear a la izquierda solo la columna "nombre" (segunda columna) */
+td:nth-child(2), th:nth-child(2) {
+    text-align: left !important;
+    padding-left: 24px; /* Opcional: para mejor visual */
 }
 
 tr:hover {

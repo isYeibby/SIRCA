@@ -1,0 +1,272 @@
+.datos-generales {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    background: #e6f0ff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44, 90, 160, 0.07);
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+
+
+
+.datos-generales.hoja-vida {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    padding: 32px 32px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(44, 90, 160, 0.10);
+    margin: 0 auto;
+    max-width: 700px;
+    gap: 32px;
+    border: 1.5px solid #e0e6ef;
+}
+
+.foto-paciente {
+    flex: 0 0 120px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.foto-paciente img {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2.5px solid #264d99;
+    background: #f4f8ff;
+    box-shadow: 0 2px 8px rgba(44, 90, 160, 0.10);
+}
+
+.info-paciente {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.08em;
+    color: #264d99;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.nombre-paciente {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #264d99;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.linea {
+    width: 60px;
+    height: 3px;
+    background: #264d99;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.etiqueta {
+    color: #264d99;
+    font-weight: bold;
+    margin-right: 8px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1em;
+    box-shadow: none;
+}
+
+/* Contenedor principal centrado */
+.expediente-container {
+    background: #e6f0ff;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* Tarjeta blanca con sombra y bordes redondeados */
+.expediente-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(44, 90, 160, 0.10);
+    padding: 90px 56px 40px 56px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+/* Contenedor de foto y estado en fila, sobresaliendo arriba */
+.expediente-foto-estado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    position: absolute;
+    top: -55px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    margin-bottom: 0;
+}
+
+.expediente-foto {
+    background: #e6f0ff;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(44, 90, 160, 0.10);
+}
+
+.expediente-foto img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #264d99;
+    background: #fff;
+    object-fit: cover;
+}
+
+.expediente-foto.riesgo-alto img {
+    border-color: #e53935 !important; /* Rojo */
+}
+
+.expediente-foto.riesgo-bajo img {
+    border-color: #43a047 !important; /* Verde */
+}
+
+/* Si quieres un color para riesgo medio, puedes agregar: */
+.expediente-foto.riesgo-medio img {
+    border-color: #fbc02d !important; /* Amarillo */
+}
+
+.expediente-estado {
+    font-size: 1.1em;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 180px;
+    text-align: right;
+    justify-content: flex-end;
+    
+}
+
+/* Sección de información personal */
+.expediente-info-section {
+    background: #e6f0ff;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    margin: 0 0 24px 0;
+}
+
+.expediente-info-titulo {
+    background: #b8cbe9;
+    color: #264d99;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    padding: 6px 0;
+    margin-bottom: 14px;
+    font-size: 1.08em;
+}
+
+.expediente-info-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 18px 36px;
+    font-size: 1.1em;
+    color: #222;
+}
+
+.expediente-vista-toggle {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 18px;
+    margin-right: 0;
+    position: absolute;
+    top: 18px;
+    right: 32px;
+    z-index: 10;
+}
+
+.toggle-btn {
+    background: #425a7e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 22px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover {
+    background: #e6f0ff;
+    color: #425a7e;
+    border: 2px solid #425a7e;
+}
+
+@media (max-width: 700px) {
+    .tarjeta-pokemon {
+        padding: 18px 8px;
+        gap: 14px;
+    }
+    .datos-generales.hoja-vida {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px 8px;
+        gap: 18px;
+    }
+    .foto-paciente {
+        margin-bottom: 10px;
+    }
+    .info-paciente {
+        align-items: center;
+        text-align: center;
+    }
+    .linea {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .expediente-vista-toggle {
+        position: static;
+        justify-content: center;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .expediente-card {
+        max-width: 98vw;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .expediente-info-datos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .expediente-card {
+        padding: 24px 6px 18px 6px;
+    }
+    .expediente-info-datos {
+        grid-template-columns: 1fr;
+        gap: 10px 0;
+    }
+}
+

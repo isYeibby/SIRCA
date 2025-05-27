@@ -1,15 +1,15 @@
 // Datos de ejemplo para los pacientes
 const pacientes = [
-    { id: 2022060051, nombre: "Juan Pérez", diagnostico: "Hipotiroidismo", estado: "terminado" },
-    { id: 2022060052, nombre: "María López", diagnostico: "Diabetes tipo 2 controlada", estado: "enProceso" },
+    { id: 2022060051, nombre: "Juan Pérez", diagnostico: "Alto", estado: "terminado",  },
+    { id: 2022060052, nombre: "María López", diagnostico: "", estado: "enProceso" },
     { id: 2022060053, nombre: "Carlos García", diagnostico: "", estado: "sinIniciar" },
-    { id: 2022060054, nombre: "Ana Torres", diagnostico: "Hipotiroidismo", estado: "terminado" },
-    { id: 2022060055, nombre: "Luis Martínez", diagnostico: "Obesidad grado 2", estado: "enProceso" },
-    { id: 2022060056, nombre: "Sofía Ramírez", diagnostico: "Sin diagnóstico disponible", estado: "sinIniciar" },
-    { id: 2022060057, nombre: "Pedro Sánchez", diagnostico: "Hipertensión arterial", estado: "terminado" },
-    { id: 2022060058, nombre: "Laura Gómez", diagnostico: "Asma leve persistente", estado: "enProceso" },
-    { id: 2022060059, nombre: "Jorge Herrera", diagnostico: "Colesterol alto", estado: "sinIniciar" },
-    { id: 2022060060, nombre: "Marta Ruiz", diagnostico: "Diabetes tipo 1", estado: "terminado" }
+    { id: 2022060054, nombre: "Ana Torres", diagnostico: "Bajo", estado: "terminado" },
+    { id: 2022060055, nombre: "Luis Martínez", diagnostico: "", estado: "enProceso" },
+    { id: 2022060056, nombre: "Sofía Ramírez", diagnostico: "", estado: "sinIniciar" },
+    { id: 2022060057, nombre: "Pedro Sánchez", diagnostico: "Bajo", estado: "terminado" },
+    { id: 2022060058, nombre: "Laura Gómez", diagnostico: "", estado: "enProceso" },
+    { id: 2022060059, nombre: "Jorge Herrera", diagnostico: "", estado: "sinIniciar" },
+    { id: 2022060060, nombre: "Marta Ruiz", diagnostico: "Alto", estado: "terminado" }
 ];
 
 // Referencia al cuerpo de la tabla
@@ -26,6 +26,7 @@ function generarFilas(pacientesFiltrados = pacientes) {
             <td>${paciente.nombre}</td>
             <td>${diagnostico}</td>
             <td><a href="/entrevistador/menuQ.html" class="${paciente.estado}">Ver</a></td>
+            <td><a href="/paciente/expediente.html" class="${paciente.diagnostico}">Detalles</a></td>
         `;
         tbody.appendChild(fila);
     });
@@ -36,7 +37,7 @@ function buscarPacientes() {
     const input = document.getElementById("search");
         const formattedInput = input.value.toLowerCase().trim();
     const pacientesFiltrados = pacientes.filter(paciente =>
-paciente.nombre.toLowerCase().includes(formattedInput) || paciente.id.toString().includes(formattedInput)    );
+paciente.nombre.toLowerCase().includes(formattedInput) || paciente.id.toString().includes(formattedInput) );
 
     if (pacientesFiltrados.length > 0) {
         generarFilas(pacientesFiltrados);
