@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Recuperar Contraseña</title>
-    <link rel="stylesheet" href="./css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recuperar Contraseña</title>
+  <link rel="stylesheet" href="/css/loggin.css" />
 </head>
 <body>
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="/img/red.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
 
-    <main>
-        <p>Para reajustar su contraseña, envíe su nombre de usuario o su dirección de correo electrónico. Si podemos encontrarlo en la base de datos, le enviaremos un email con instrucciones para poder acceder de nuevo.</p>
+    <div class="contenido">
+      <div class="contenedor-recover">
+        <h2>Recuperar Contraseña</h2>
 
-        <section>
-            <h2>Buscar por nombre de usuario</h2>
-            <form action="recuperar.php" method="POST">
-                <label for="usuario">Nombre de usuario</label>
-                <input type="text" id="usuario" name="usuario">
-                <button type="submit">Buscar</button>
-            </form>
-        </section>
+        <p class="instrucciones">
+          Para reajustar su contraseña, envíe su <strong>nombre de usuario</strong> o su <strong>correo electrónico</strong>. Si lo encontramos en la base de datos, le enviaremos un email con instrucciones para recuperar el acceso.
+        </p>
 
-        <section>
-            <h2>Buscar por dirección email</h2>
-            <form action="recuperar.php" method="POST">
-                <label for="email">Dirección Email</label>
-                <input type="email" id="email" name="email">
-                <button type="submit">Buscar</button>
-            </form>
-        </section>
-        <section>
-            <h2>Volver a la página de inicio</h2>
-            <a href="index.html">Volver</a>
+        <!-- Buscar por usuario -->
+        <form id="form-usuario" class="form-recover">
+          <h3>Buscar por nombre de usuario</h3>
+          <input type="text" id="usuario" name="usuario" placeholder="Ej. juan123" required />
+          <button class="btn" type="submit">Buscar</button>
+        </form>
 
-    </main>
+        <!-- Buscar por email -->
+        <form id="form-email" class="form-recover" action="recuperar.php" method="POST">
+          <h3>Buscar por dirección de correo</h3>
+          <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
+          <button class="btn" type="submit">Buscar</button>
+        </form>
+
+        <!-- Volver -->
+        <div class="volver">
+          <a href="index.html" class="btn" style="margin-top: 25px; display: inline-block; width: auto; padding: 10px 25px;">Volver a Inicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

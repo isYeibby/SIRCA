@@ -1,27 +1,101 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>        
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
 </head>
 <body>
     <div class="sidebar">
-        <img src="/img/logo.png" alt="UNSIS Logo">
+        <img src="/img/logo.png" alt="UNSIS Logo" />
         <a href="/entrevistador/inicio.html">Inicio</a>
         <a href="/entrevistador/pacientes.html">Pacientes</a>
         <a href="/entrevistador/perfil.html">Perfil</a>
         <div class="logout">⟵</div>
+        <button class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false" onclick="toggleTheme()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+        </button>
+
+        <a href="/index.html" class="logout">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" width="40" height="40" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M15 3h4a2 2 0 0 1 2 2v4m0 4v4a2 2 0 0 1-2 2h-4m-3-4 4-4-4-4m4 4H3"></path>
+            </svg>
+        </a>
     </div>
+
     <div class="main-content">
         <div class="header">
             <span>Inicio</span>
             <span class="profile-icon">👤</span>
         </div>
-        <div class="content">
-            
+
+        <div class="content dashboard">
+            <div class="welcome-message">
+                <h1>Bienvenido, Entrevistador</h1>
+                <p>Esta es tu área de trabajo donde podrás gestionar pacientes y entrevistas médicas.</p>
+            </div>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <div class="card-title">Pacientes completados</div>
+                    <div class="card-value">45</div>
+                    <div class="card-desc">Total de entrevistas finalizadas</div>
+                    <div class="card-footer">
+                        <span class="success">85% Completados</span>
+                        <span class="muted">15% Restantes</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Pacientes en proceso</div>
+                    <div class="card-value">12</div>
+                    <div class="card-desc">Entrevistas en curso</div>
+                    <div class="card-footer">
+                        <span class="success">75% En progreso</span>
+                        <span class="muted">25% Pendientes</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Pacientes sin atender</div>
+                    <div class="card-value">4</div>
+                    <div class="card-desc">Aún no entrevistados</div>
+                    <div class="card-footer">
+                        <span class="success">60% Atendidos</span>
+                        <span class="danger">40% Sin atender</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-graphs">
+                <div class="graph statistics">
+                    <div class="graph-title">Estadísticas generales</div>
+                    <img src="https://dummyimage.com/400x150/ededed/aaa&text=Gráfica+Estadística" alt="Gráfica de estadísticas" />
+                </div>
+                <div class="graph performance">
+                    <div class="graph-title">Rendimiento</div>
+                    <img src="https://dummyimage.com/180x180/ededed/aaa&text=Rendimiento" alt="Gráfica de rendimiento" />
+                </div>
+                <div class="graph yearly-expense">
+                    <div class="graph-title">Comparativa anual</div>
+                    <img src="https://dummyimage.com/300x120/ededed/aaa&text=Comparativa+Anual" alt="Comparativa anual" />
+                </div>
+            </div>
         </div>
     </div>
+    <script src="/js/theme.js"></script>
 </body>
 </html>
+
+
+
+

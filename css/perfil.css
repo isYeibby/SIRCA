@@ -1,11 +1,11 @@
 .perfil h1 {
     font-size: 2em;
-    color: #fff;
+    color: var(--text-main);
     margin-bottom: 0.2em;
 }
 
 .perfil p {
-    color: #e6e6e6;
+    color: var(--text-secondary);
 }
 
 .perfil .content {
@@ -13,8 +13,8 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-     align-items: center;
-    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    align-items: center;
+    background: linear-gradient(90deg, var(--primary), #2a5298);
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 20px;
@@ -24,79 +24,80 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 100px); /* o ajusta según tu layout */
+    min-height: calc(100vh - 100px);
 }
 
-
 .perfil-card {
-    background-color: white;
+    background-color: var(--bg-box);
     border-radius: 12px;
     padding: 20px;
     width: 400px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px var(--shadow);
     position: relative;
+    color: var(--text-main);
 }
 
 .card-header {
     display: flex;
-    justify-content: center;  
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     margin-bottom: 10px;
+    color: var(--text-main);
 }
 
 .header-title {
     text-align: center;
 }
 
-
 .perfil-avatar {
     width: 80px;
     height: 80px;
-    background-color: #ccc;
+    background-color: #888; /* un gris neutro para modo oscuro */
     border-radius: 50%;
     margin: 0 auto 10px auto;
     background-image: url('/img/perfil.jpg');
     background-size: cover;
     background-position: center;
+    box-shadow: 0 0 8px var(--primary);
 }
-
 
 .card-buttons {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px; 
+    margin-top: 20px;
     padding-top: 10px;
-    border-top: 1px solid #eee; 
+    border-top: 1px solid var(--bg-light);
 }
 
-
 .btn-azul {
-    background-color: #4b6cb7;
-    color: white;
+    background-color: var(--primary);
+    color: var(--bg-box);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.btn-azul:hover{
+.btn-azul:hover {
     transform: scale(1.2);
+    background-color: var(--text-muted);
 }
 
 .btn-celeste {
     background-color: #00c9ff;
-    color: white;
+    color: var(--bg-box);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.btn-celeste:hover{
+.btn-celeste:hover {
     transform: scale(1.2);
+    background-color: #007aab;
 }
 
 .perfil-info {
@@ -113,24 +114,36 @@
 
 .form-group label {
     font-weight: bold;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 5px;
 }
 
 .form-group input {
     padding: 8px;
     border-radius: 6px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid var(--text-muted);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    background-color: var(--bg-box);
 }
 
 .info-msg {
     font-size: 0.9em;
-    color: #555;
+    color: var(--text-secondary);
     margin-top: 10px;
 }
 
 .perfil-datos p {
     margin: 10px 0;
-    color: #333;
+    color: var(--text-main);
 }
