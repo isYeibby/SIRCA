@@ -1,0 +1,132 @@
+/* Contenedor central */
+.central-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+/* informacion paciente */
+.patient-info {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    color: var(--text);
+    text-align: center;
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+.patient-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.patient-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: var(--surface);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-icon {
+    width: 42px;
+    height: 42px;
+    stroke: var(--text);
+}
+
+.patient-details p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Contenedor de botones y botones*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--bg-box);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 14px var(--shadow);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card:hover, .card:focus {
+    background-color: rgba(76, 141, 181, 0.15);
+    transform: translateY(-4px);
+    outline: none;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Botones inferiores */
+.extra-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary, .btn-outline {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Botón principal */
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #3a79b0;
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+

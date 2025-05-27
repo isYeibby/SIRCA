@@ -1,8 +1,8 @@
 // Lógica para el formulario de login
-document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+document.getElementById('form-login')?.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const username = document.getElementById('username').value.trim().toLowerCase();
+  const username = document.getElementById('usuario').value.trim().toLowerCase();
 
   switch (username) {
     case 'entrevistador':
