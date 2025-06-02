@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Información Personal</title>
-  <link rel="stylesheet" href="/css/styleqs.css" />
+  <title>Información del Paciente</title>
+  <link rel="stylesheet" href="../css/styleqs.css" />
 </head>
 <body>
 
   <header class="encabezado">
-    <img src="/img/logo.png" alt="Logo UNISIS" />
-    <h1>Información Personal</h1>
+    <img src="../img/logo.png" alt="Logo UNISIS" />
+    <h1>Evaluación de Riesgo Cardiovascular</h1>
   </header>
 
   <main class="zona-principal">
     <div class="flecha flecha-izquierda">&larr;</div>
 
     <form class="contenedor-formulario">
+      <!-- Información del entrevistador -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Información del Entrevistador</h2>
-      </div>  
+      </div>
 
       <div class="campo">
         <label for="entrevistador">Entrevistador:</label>
-        <input type="text" id="entrevistador" name="entrevistador" />
+        <input type="text" id="entrevistador" name="entrevistador" placeholder="Ej. Lic. Juan Pérez" />
       </div>
 
       <div class="campo">
         <label for="numero-caso">N° de caso:</label>
-        <input type="text" id="numero-caso" name="numero-caso" />
+        <input type="text" id="numero-caso" name="numero-caso" placeholder="Ej. 001-A2025" />
       </div>
 
       <div class="campo">
@@ -36,58 +37,91 @@
         <input type="date" id="fecha-evaluacion" name="fecha-evaluacion" />
       </div>
 
+      <!-- Información del paciente -->
       <div class="subtitulo-con-boton">
-        <h2 class="subtitulo">Información del Paciente</h2>
-      </div>
-
-      <div class="campo">
-        <label for="apellido-paterno">Apellido paterno:</label>
-        <input type="text" id="apellido-paterno" name="apellido-paterno" />
-      </div>
-
-      <div class="campo">
-        <label for="apellido-materno">Apellido materno:</label>
-        <input type="text" id="apellido-materno" name="apellido-materno" />
+        <h2 class="subtitulo">Información General del Paciente</h2>
       </div>
 
       <div class="campo">
         <label for="nombre">Nombre(s):</label>
-        <input type="text" id="nombre" name="nombre" />
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. María Fernanda" />
       </div>
 
       <div class="campo">
-        <label for="licenciatura">Licenciatura:</label>
-        <input type="text" id="licenciatura" name="licenciatura" />
+        <label for="apellido-paterno">Apellido paterno:</label>
+        <input type="text" id="apellido-paterno" name="apellido-paterno" placeholder="Ej. González" />
       </div>
 
       <div class="campo">
-        <label for="grupo">Grupo:</label>
-        <input type="text" id="grupo" name="grupo" />
+        <label for="apellido-materno">Apellido materno:</label>
+        <input type="text" id="apellido-materno" name="apellido-materno" placeholder="Ej. Ramírez" />
       </div>
 
       <div class="campo">
         <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" />
+        <input type="number" id="edad" name="edad" placeholder="Ej. 42" min="0" />
       </div>
 
       <div class="campo">
         <label for="sexo">Sexo:</label>
         <select id="sexo" name="sexo">
           <option value="">Seleccione</option>
-          <option value="F">Femenino</option>
           <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+          <option value="O">Otro</option>
         </select>
       </div>
 
+      <div class="campo">
+        <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" />
+      </div>
+
+      <div class="campo">
+        <label for="ocupacion">Ocupación:</label>
+        <input type="text" id="ocupacion" name="ocupacion" placeholder="Ej. Maestro de primaria" />
+      </div>
+
+      <div class="campo">
+        <label for="estado-civil">Estado civil:</label>
+        <select id="estado-civil" name="estado-civil">
+          <option value="">Seleccione</option>
+          <option value="soltero">Soltero(a)</option>
+          <option value="casado">Casado(a)</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="escolaridad">Escolaridad:</label>
+        <select id="escolaridad" name="escolaridad">
+          <option value="">Seleccione</option>
+          <option value="primaria">Primaria</option>
+          <option value="secundaria">Secundaria</option>
+          <option value="media-superior">Media superior</option>
+          <option value="superior">Superior</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="seguro">Cobertura médica:</label>
+        <select id="seguro" name="seguro">
+          <option value="">Seleccione</option>
+          <option value="publico">Pública</option>
+          <option value="privado">Privada</option>
+          <option value="ninguno">Ninguna</option>
+        </select>
+      </div>
+
+      <!-- Botón de acción -->
       <div class="boton-centrado">
-        <a href="/entrevistador/menuQ.html">
-          <button type="button">Guardar</button>
-        </a>
+        <button type="submit">Guardar</button>
       </div>
 
     </form>
 
     <div class="flecha flecha-derecha">&rarr;</div>
   </main>
+
 </body>
 </html>

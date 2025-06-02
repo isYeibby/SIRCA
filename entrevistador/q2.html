@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antecedentes Patológicos</title>
   <link rel="stylesheet" href="/css/styleqs.css" />
+  <style>
+    .flecha-izquierda {
+      position: fixed;
+      top: 110px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .flecha-derecha {
+      position: fixed;
+      top: 110px;
+      right: 20px;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,45 +33,43 @@
 
     <form class="contenedor-formulario">
 
-      <!-- Sección de antecedentes con un subtítulo para HTA -->
+      <!-- HTA -->
       <div class="subtitulo-con-boton">
-        <h2 class="subtitulo">HTA</h2>
+        <h2 class="subtitulo">Hipertensión Arterial (HTA)</h2>
         <button type="button" class="agregar-linea" onclick="agregarLinea('hta')">+</button>
       </div>
-      <div class="campo" id="hta-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
+      <div class="campo" id="hta-fields"></div>
 
-      <!-- Sección de antecedentes con un subtítulo para Diabetes -->
+      <!-- Diabetes -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Diabetes</h2>
         <button type="button" class="agregar-linea" onclick="agregarLinea('diabetes')">+</button>
       </div>
-      <div class="campo" id="diabetes-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
+      <div class="campo" id="diabetes-fields"></div>
 
-      <!-- Sección de antecedentes con un subtítulo para Coronarias -->
+      <!-- Coronarias -->
       <div class="subtitulo-con-boton">
-        <h2 class="subtitulo">Coronarias</h2>
+        <h2 class="subtitulo">Enfermedades Coronarias</h2>
         <button type="button" class="agregar-linea" onclick="agregarLinea('coronarias')">+</button>
       </div>
-      <div class="campo" id="coronarias-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
+      <div class="campo" id="coronarias-fields"></div>
 
-      <!-- Sección de antecedentes con un subtítulo para Neoplasias -->
+      <!-- Neoplasias -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Neoplasias</h2>
         <button type="button" class="agregar-linea" onclick="agregarLinea('neoplasias')">+</button>
       </div>
-      <div class="campo" id="neoplasias-fields"></div> <!-- Aquí se agregarán dinámicamente las líneas -->
+      <div class="campo" id="neoplasias-fields"></div>
 
+      <!-- Botón Guardar -->
       <div class="boton-centrado">
-        <a href="/entrevistador/menuQ.html">
-          <button type="button">Guardar</button>
-        </a>
+        <button type="submit">Guardar</button>
       </div>
     </form>
 
     <div class="flecha flecha-derecha">&rarr;</div>
   </main>
 
-  <!-- Referencia al archivo JS externo -->
   <script src="/js/antecedentes.js"></script>
 </body>
 </html>

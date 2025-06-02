@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Factores de Riesgo</title>
   <link rel="stylesheet" href="/css/styleqs.css" />
+  <style>
+    /* Flechas fijas en la parte superior */
+    .flecha-izquierda {
+      position: fixed;
+      top: 110px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .flecha-derecha {
+      position: fixed;
+      top: 110px;
+      right: 20px;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,85 +30,90 @@
   </header>
 
   <main class="zona-principal">
+
     <div class="flecha flecha-izquierda">&larr;</div>
 
     <form class="contenedor-formulario">
+
+      <!-- Presión Arterial -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Presión Arterial</h2>
       </div>
 
       <div class="campo">
-        <label for="presion-arterial">Presión arterial:</label>
-        <input type="text" id="presion-arterial" name="presion-arterial" />
+        <label for="presion-arterial">Presión arterial (mmHg):</label>
+        <input type="text" id="presion-arterial" name="presion-arterial" placeholder="Ej. 120/80" />
       </div>
 
       <div class="campo">
-        <label for="sistolica">Sistólica:</label>
-        <input type="text" id="sistolica" name="sistolica" />
+        <label for="sistolica">Sistólica (mmHg):</label>
+        <input type="number" id="sistolica" name="sistolica" placeholder="Ej. 120" />
       </div>
 
       <div class="campo">
-        <label for="diastolica">Diastólica:</label>
-        <input type="text" id="diastolica" name="diastolica" />
+        <label for="diastolica">Diastólica (mmHg):</label>
+        <input type="number" id="diastolica" name="diastolica" placeholder="Ej. 80" />
       </div>
 
       <div class="campo">
-        <label for="deteccion-oportuna">Detección oportuna:</label>
-        <input type="text" id="deteccion-oportuna" name="deteccion-oportuna" />
+        <label for="deteccion-oportuna">¿Detección oportuna?:</label>
+        <input type="text" id="deteccion-oportuna" name="deteccion-oportuna" placeholder="Ej. Sí / No / En tratamiento" />
       </div>
 
+      <!-- Perfil Lipídico -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Perfil Lipídico</h2>
       </div>
 
       <div class="campo">
         <label for="perfil-lipidico">Perfil lipídico:</label>
-        <input type="text" id="perfil-lipidico" name="perfil-lipidico" />
+        <input type="text" id="perfil-lipidico" name="perfil-lipidico" placeholder="Ej. Dentro de rango / Alterado" />
       </div>
 
       <div class="campo">
-        <label for="trigliceridos">Triglicéridos:</label>
-        <input type="text" id="trigliceridos" name="trigliceridos" />
+        <label for="trigliceridos">Triglicéridos (mg/dL):</label>
+        <input type="number" id="trigliceridos" name="trigliceridos" placeholder="Ej. 150" />
       </div>
 
       <div class="campo">
-        <label for="colesterol">Colesterol:</label>
-        <input type="text" id="colesterol" name="colesterol" />
+        <label for="colesterol">Colesterol total (mg/dL):</label>
+        <input type="number" id="colesterol" name="colesterol" placeholder="Ej. 200" />
       </div>
 
+      <!-- Tabaquismo -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Tabaquismo</h2>
       </div>
-      
 
       <div class="campo">
-        <label for="tabaquismo">Tabaquismo:</label>
-        <input type="text" id="tabaquismo" name="tabaquismo" />
+        <label for="tabaquismo">¿Fuma actualmente?:</label>
+        <input type="text" id="tabaquismo" name="tabaquismo" placeholder="Ej. Sí / No / Exfumador" />
       </div>
 
       <div class="campo">
         <label for="cigarros-dia">Número de cigarros al día:</label>
-        <input type="text" id="cigarros-dia" name="cigarros-dia" />
+        <input type="number" id="cigarros-dia" name="cigarros-dia" placeholder="Ej. 5" />
       </div>
 
       <div class="campo">
         <label for="nivel-tabaquismo">Nivel de tabaquismo:</label>
-        <input type="text" id="nivel-tabaquismo" name="nivel-tabaquismo" />
+        <input type="text" id="nivel-tabaquismo" name="nivel-tabaquismo" placeholder="Ej. Bajo / Moderado / Alto" />
       </div>
 
       <div class="campo">
         <label for="tiempo-exposicion">Tiempo de exposición (meses):</label>
-        <input type="text" id="tiempo-exposicion" name="tiempo-exposicion" />
+        <input type="number" id="tiempo-exposicion" name="tiempo-exposicion" placeholder="Ej. 36" />
       </div>
 
+      <!-- Botón de guardar -->
       <div class="boton-centrado">
-        <a href="/entrevistador/menuQ.html">
-          <button type="button">Guardar</button>
-        </a>
+        <button type="submit">Guardar</button>
       </div>
+
     </form>
 
     <div class="flecha flecha-derecha">&rarr;</div>
+
   </main>
 
 </body>
