@@ -240,14 +240,14 @@ body {
 /* Flechas fijas arriba */
 .flecha-izquierda {
   position: fixed;
-  top: 110px; /* justo debajo del encabezado */
+  top: 500px; /* justo debajo del encabezado */
   left: 20px;
   z-index: 1000;
 }
 
 .flecha-derecha {
   position: fixed;
-  top: 110px;
+  top: 500px;
   right: 20px;
   z-index: 1000;
 }
