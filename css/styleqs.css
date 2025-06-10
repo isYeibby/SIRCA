@@ -119,22 +119,6 @@ body {
   box-shadow: 0 6px 14px rgba(58, 86, 140, 0.4);
 }
 
-.flecha {
-  font-size: 36px;
-  cursor: pointer;
-  color: #26457b;
-  font-weight: bold;
-  user-select: none;
-  transition: background 0.3s ease;
-  border-radius: 50%;
-  padding: 10px;
-  align-self: center;
-}
-
-.flecha:hover {
-  background-color: #d3dff4;
-}
-
 /* Estilo para cada línea agregada */
 .subtitulo-con-boton {
   display: flex;
@@ -237,18 +221,49 @@ body {
   color: #ffffff;
   transform: scale(1.05);
 }
-/* Flechas fijas arriba */
-.flecha-izquierda {
+/* Contenedor para animaciones */
+.zona-principal {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;  /* Transición suave para la opacidad */
+}
+
+/* Clase que activa la animación de salida */
+.fade-out {
+  opacity: 0;
+}
+
+/* Estilos flechas */
+.flecha-izquierda,
+.flecha-derecha {
   position: fixed;
-  top: 110px; /* justo debajo del encabezado */
-  left: 20px;
+  top: 450px;
+  font-size: 28px;
+  background-color: #26457b;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.flecha-izquierda {
+  left: 20px;
 }
 
 .flecha-derecha {
-  position: fixed;
-  top: 110px;
   right: 20px;
-  z-index: 1000;
+}
+
+.flecha-izquierda:hover,
+.flecha-derecha:hover {
+  background-color: #3a568c;
+  transform: scale(1.1);
 }
 

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Actividad Física</title>
-  <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="../css/styleqs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
   <header class="encabezado">
@@ -14,44 +17,109 @@
   </header>
 
   <main class="zona-principal">
-    <div class="flecha flecha-izquierda">&larr;</div>
+    <a class="flecha flecha-izquierda" data-target="q4.html">
+      <i class="fas fa-arrow-left"></i>
+    </a>
 
-    <form class="contenedor-formulario">
+    <form class="contenedor-formulario" id="form-actividad">
 
       <div class="campo">
         <label for="tipo-actividad">Tipo de actividad física que realiza:</label>
-        <input type="text" id="tipo-actividad" name="tipo-actividad" />
+        <input type="text" id="tipo-actividad" name="tipo-actividad" placeholder="Ej. Caminar, correr, nadar" />
       </div>
 
       <div class="campo">
-        <label for="dias-semana">Días de la semana que la realiza:</label>
-        <input type="text" id="dias-semana" name="dias-semana" />
+        <label for="dias-semana">Días por semana:</label>
+        <input type="number" id="dias-semana" name="dias-semana" placeholder="Ej. 3" min="0" />
       </div>
 
       <div class="campo">
-        <label for="minutos-dia">Minutos al día que la realiza:</label>
-        <input type="text" id="minutos-dia" name="minutos-dia" />
+        <label for="minutos-dia">Minutos por día:</label>
+        <input type="number" id="minutos-dia" name="minutos-dia" placeholder="Ej. 40" min="0" />
       </div>
 
       <div class="campo">
-        <label for="promedio">Promedio:</label>
-        <input type="text" id="promedio" name="promedio" />
+        <label for="promedio">Minutos semanales (promedio):</label>
+        <input type="text" id="promedio" name="promedio" readonly placeholder="Se calcula automáticamente" />
       </div>
 
       <div class="campo">
         <label for="nivel-actividad">Nivel de actividad física:</label>
-        <input type="text" id="nivel-actividad" name="nivel-actividad" />
+        <input type="text" id="nivel-actividad" name="nivel-actividad" readonly
+          placeholder="Se calcula automáticamente" />
       </div>
 
       <div class="boton-centrado">
-        <a href="/entrevistador/menuQ.html">
-          <button type="button">Guardar</button>
-        </a>
+        <button type="submit">Guardar</button>
       </div>
     </form>
 
-    <div class="flecha flecha-derecha">&rarr;</div>
+    <a class="flecha flecha-derecha" data-target="inicio.html">
+      <i class="fas fa-arrow-right"></i>
+    </a>
   </main>
 
+  <script>
+    const diasInput = document.getElementById("dias-semana");
+    const minutosInput = document.getElementById("minutos-dia");
+    const promedioInput = document.getElementById("promedio");
+    const nivelInput = document.getElementById("nivel-actividad");
+
+    function calcularPromedio() {
+      const dias = parseInt(diasInput.value);
+      const minutos = parseInt(minutosInput.value);
+
+      if (!isNaN(dias) && !isNaN(minutos)) {
+        const total = dias * minutos;
+        promedioInput.value = total;
+
+        let nivel = "";
+        if (total < 150) nivel = "Bajo";
+        else if (total < 300) nivel = "Moderado";
+        else nivel = "Alto";
+
+        nivelInput.value = nivel;
+      } else {
+        promedioInput.value = "";
+        nivelInput.value = "";
+      }
+    }
+
+    diasInput.addEventListener("input", calcularPromedio);
+    minutosInput.addEventListener("input", calcularPromedio);
+
+    document.getElementById("form-actividad").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const datos = {
+        tipoActividad: document.getElementById("tipo-actividad").value,
+        diasSemana: document.getElementById("dias-semana").value,
+        minutosDia: document.getElementById("minutos-dia").value,
+        minutosSemanales: document.getElementById("promedio").value,
+        nivelActividad: document.getElementById("nivel-actividad").value
+      };
+
+      console.log("Actividad física:");
+      console.log(JSON.stringify(datos, null, 2));
+      alert("Datos guardados correctamente (ver consola).");
+    });
+  </script>
+  <script>
+    const flechas = document.querySelectorAll('.flecha');
+    const zona = document.querySelector('.zona-principal');
+
+    flechas.forEach(flecha => {
+      flecha.addEventListener('click', function (e) {
+        e.preventDefault();
+        const destino = this.getAttribute('data-target');
+        zona.classList.add('fade-out');
+
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 800); // tiempo que dura la animación CSS
+      });
+    });
+  </script>
 </body>
+
 </html>

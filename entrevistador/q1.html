@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Información del Paciente</title>
   <link rel="stylesheet" href="../css/styleqs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
 
   <header class="encabezado">
@@ -14,8 +18,9 @@
   </header>
 
   <main class="zona-principal">
-    <div class="flecha flecha-izquierda">&larr;</div>
-
+    <a class="flecha flecha-izquierda" data-target="inicio.html">
+      <i class="fas fa-arrow-left"></i>
+    </a>
     <form class="contenedor-formulario">
       <!-- Información del entrevistador -->
       <div class="subtitulo-con-boton">
@@ -120,8 +125,28 @@
 
     </form>
 
-    <div class="flecha flecha-derecha">&rarr;</div>
+    <a class="flecha flecha-derecha" data-target="q2.html">
+      <i class="fas fa-arrow-right"></i>
+    </a>
   </main>
 
+  <script>
+    const flechas = document.querySelectorAll('.flecha');
+    const zona = document.querySelector('.zona-principal');
+
+    flechas.forEach(flecha => {
+      flecha.addEventListener('click', function (e) {
+        e.preventDefault();
+        const destino = this.getAttribute('data-target');
+        zona.classList.add('fade-out');
+
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 800); // tiempo que dura la animación CSS
+      });
+    });
+  </script>
+
 </body>
+
 </html>
