@@ -11,12 +11,12 @@
 <body>
 
   <header class="encabezado">
-    <img src=../img/logo.png" alt="Logo" />
+    <img src=/img/logo.png" alt="Logo" />
     <h1>Actividad Física</h1>
   </header>
 
   <main class="zona-principal">
-    <a class="flecha flecha-izquierda" data-target="q4.html">
+    <a class="flecha flecha-izquierda" data-target="q4.html" data-dir="left">
       <i class="fas fa-arrow-left"></i>
     </a>
 
@@ -53,7 +53,7 @@
       </div>
     </form>
 
-    <a class="flecha flecha-derecha" data-target="inicio.html">
+    <a class="flecha flecha-derecha" data-target="inicio.html" data-dir="right">
       <i class="fas fa-arrow-right"></i>
     </a>
   </main>
@@ -104,6 +104,7 @@
     });
   </script>
   <script>
+    // Animación al cambiar de página
     const flechas = document.querySelectorAll('.flecha');
     const zona = document.querySelector('.zona-principal');
 
@@ -111,11 +112,14 @@
       flecha.addEventListener('click', function (e) {
         e.preventDefault();
         const destino = this.getAttribute('data-target');
-        zona.classList.add('fade-out');
+        const direccion = this.getAttribute('data-dir');
+
+        zona.classList.remove('slide-out-left', 'slide-out-right');
+        zona.classList.add(direccion === 'right' ? 'slide-out-left' : 'slide-out-right');
 
         setTimeout(() => {
           window.location.href = destino;
-        }, 800); // tiempo que dura la animación CSS
+        }, 600);
       });
     });
   </script>

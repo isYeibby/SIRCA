@@ -5,19 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antecedentes Patológicos</title>
-  <link rel="stylesheet" href="../css/styleqs.css" />
+  <link rel="stylesheet" href="/css/styleqs.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
   <header class="encabezado">
-    <img src="../img/logo.png" alt="Logo" />
+    <img src="/img/logo.png" alt="Logo" />
     <h1>Antecedentes Patológicos</h1>
   </header>
 
   <main class="zona-principal">
-    <div class="flecha flecha-izquierda">&larr;</div>
+    <a class="flecha flecha-izquierda" data-target="q1.html" data-dir="left">
+      <i class="fas fa-arrow-left"></i>
+    </a>
 
     <form class="contenedor-formulario">
 
@@ -55,10 +57,13 @@
       </div>
     </form>
 
-    <div class="flecha flecha-derecha">&rarr;</div>
+    <a class="flecha flecha-derecha" data-target="q3.html" data-dir="right">
+      <i class="fas fa-arrow-right"></i>
+    </a>
   </main>
 
   <script>
+    // Animación al cambiar de página
     const flechas = document.querySelectorAll('.flecha');
     const zona = document.querySelector('.zona-principal');
 
@@ -66,15 +71,18 @@
       flecha.addEventListener('click', function (e) {
         e.preventDefault();
         const destino = this.getAttribute('data-target');
-        zona.classList.add('fade-out');
+        const direccion = this.getAttribute('data-dir');
+
+        zona.classList.remove('slide-out-left', 'slide-out-right');
+        zona.classList.add(direccion === 'right' ? 'slide-out-left' : 'slide-out-right');
 
         setTimeout(() => {
           window.location.href = destino;
-        }, 800); // tiempo que dura la animación CSS
+        }, 600);
       });
     });
   </script>
 </body>
-<script src=../js/background.js></script>
+<script src=/js/background.js></script>
 
 </html>

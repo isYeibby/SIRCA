@@ -5,19 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Factores de Riesgo</title>
-  <link rel="stylesheet" href="../css/styleqs.css" />
+  <link rel="stylesheet" href="/css/styleqs.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 
 <body>
 
   <header class="encabezado">
-    <img src="../img/logo.png" alt="Logo">
+    <img src="/img/logo.png" alt="Logo">
     <h1>Factores de Riesgo</h1>
   </header>
 
   <main class="zona-principal">
-    <a class="flecha flecha-izquierda" data-target="q2.html">
+    <a class="flecha flecha-izquierda" data-target="q2.html" data-dir="left">
       <i class="fas fa-arrow-left"></i>
     </a>
 
@@ -80,7 +82,7 @@
         </label>
       </div>
 
-      <div id="tabaquismo-campos" class="oculto">
+      <div id="tabaquismo-campos">
         <div class="campo">
           <label for="cigarros-dia">Número de cigarros al día:</label>
           <input type="number" id="cigarros-dia" name="cigarros-dia" placeholder="Ej. 5" />
@@ -103,22 +105,43 @@
       </div>
     </form>
 
-    <a class="flecha flecha-derecha" data-target="q4.html">
+    <a class="flecha flecha-derecha" data-target="q4.html" data-dir="right">
       <i class="fas fa-arrow-right"></i>
     </a>
   </main>
+
+  <script>
+    // Animación al cambiar de página
+    const flechas = document.querySelectorAll('.flecha');
+    const zona = document.querySelector('.zona-principal');
+
+    flechas.forEach(flecha => {
+      flecha.addEventListener('click', function (e) {
+        e.preventDefault();
+        const destino = this.getAttribute('data-target');
+        const direccion = this.getAttribute('data-dir');
+
+        zona.classList.remove('slide-out-left', 'slide-out-right');
+        zona.classList.add(direccion === 'right' ? 'slide-out-left' : 'slide-out-right');
+
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 600);
+      });
+    });
+  </script>
 
   <script>
     const checkboxFumador = document.getElementById('fumador');
     const camposTabaquismo = document.getElementById('tabaquismo-campos');
 
     checkboxFumador.addEventListener('change', function () {
-      camposTabaquismo.classList.toggle('oculto', !this.checked);
+      camposTabaquismo.classList.toggle('activo', this.checked);
     });
 
     const form = document.getElementById('form-riesgo');
     form.addEventListener('submit', function (e) {
-      e.preventDefault(); // evita recarga de página
+      e.preventDefault();
 
       const datos = {
         presionArterial: document.getElementById('presion-arterial').value,
@@ -151,25 +174,7 @@
 
       console.log("Datos recopilados:");
       console.log(JSON.stringify(datos, null, 2));
-
-      // Aquí puedes hacer una petición fetch o enviar los datos a tu backend si lo deseas.
       alert("Datos guardados correctamente (ver consola).");
-    });
-  </script>
-  <script>
-    const flechas = document.querySelectorAll('.flecha');
-    const zona = document.querySelector('.zona-principal');
-
-    flechas.forEach(flecha => {
-      flecha.addEventListener('click', function (e) {
-        e.preventDefault();
-        const destino = this.getAttribute('data-target');
-        zona.classList.add('fade-out');
-
-        setTimeout(() => {
-          window.location.href = destino;
-        }, 800); // tiempo que dura la animación CSS
-      });
     });
   </script>
 </body>
