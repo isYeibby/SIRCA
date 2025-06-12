@@ -7,18 +7,23 @@ const cuestionarios = [
     { nombre: "Actividad Física", estado: "enProceso" }
 ];
 
-// Seleccionar todos los divs con la clase "circle"
-const circles = document.querySelectorAll(".circle");
+// Seleccionar todos los artículos con la clase "card"
+const cards = document.querySelectorAll(".card");
 
-// Asignar colores según el estado
-circles.forEach((circle, index) => {
-    const estado = cuestionarios[index]?.estado || "sinIniciar"; // Estado por defecto
-    circle.classList.add(estado); // Agregar clase según el estado
+// Asignar colores/clases según el estado
+cards.forEach((card) => {
+    const texto = card.querySelector("p").textContent.trim();
 
-    // Agregar evento de clic a cada círculo
-    circle.addEventListener("click", () => {
-        const text = circle.textContent.trim(); // Obtener el texto del círculo
-        switch (text) {
+    // Buscar el cuestionario que coincide por nombre
+    const cuestionario = cuestionarios.find(q => q.nombre === texto);
+    const estado = cuestionario ? cuestionario.estado : "sinIniciar";
+
+    // Agregar clase según el estado
+    card.classList.add(estado);
+
+    // Agregar evento de clic
+    card.addEventListener("click", () => {
+        switch (texto) {
             case "Información Personal":
                 window.location.href = "/entrevistador/q1.html";
                 break;
