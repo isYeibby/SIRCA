@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Factores de Riesgo</title>
   <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
+
 <body>
 
   <header class="encabezado">
@@ -14,86 +19,164 @@
   </header>
 
   <main class="zona-principal">
-    <div class="flecha flecha-izquierda">&larr;</div>
+    <a class="flecha flecha-izquierda" data-target="q2.html" data-dir="left">
+      <i class="fas fa-arrow-left"></i>
+    </a>
 
-    <form class="contenedor-formulario">
+    <form class="contenedor-formulario" id="form-riesgo">
+      <!-- Presión Arterial -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Presión Arterial</h2>
       </div>
 
       <div class="campo">
-        <label for="presion-arterial">Presión arterial:</label>
-        <input type="text" id="presion-arterial" name="presion-arterial" />
+        <label for="presion-arterial">Presión arterial (mmHg):</label>
+        <input type="text" id="presion-arterial" name="presion-arterial" placeholder="Ej. 120/80" />
       </div>
 
       <div class="campo">
-        <label for="sistolica">Sistólica:</label>
-        <input type="text" id="sistolica" name="sistolica" />
+        <label for="sistolica">Sistólica (mmHg):</label>
+        <input type="number" id="sistolica" name="sistolica" placeholder="Ej. 120" />
       </div>
 
       <div class="campo">
-        <label for="diastolica">Diastólica:</label>
-        <input type="text" id="diastolica" name="diastolica" />
+        <label for="diastolica">Diastólica (mmHg):</label>
+        <input type="number" id="diastolica" name="diastolica" placeholder="Ej. 80" />
       </div>
 
       <div class="campo">
-        <label for="deteccion-oportuna">Detección oportuna:</label>
-        <input type="text" id="deteccion-oportuna" name="deteccion-oportuna" />
+        <label for="deteccion-oportuna">¿Detección oportuna?:</label>
+        <input type="text" id="deteccion-oportuna" name="deteccion-oportuna"
+          placeholder="Ej. Sí / No / En tratamiento" />
       </div>
 
+      <!-- Perfil Lipídico -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Perfil Lipídico</h2>
       </div>
 
       <div class="campo">
         <label for="perfil-lipidico">Perfil lipídico:</label>
-        <input type="text" id="perfil-lipidico" name="perfil-lipidico" />
+        <input type="text" id="perfil-lipidico" name="perfil-lipidico" placeholder="Ej. Dentro de rango / Alterado" />
       </div>
 
       <div class="campo">
-        <label for="trigliceridos">Triglicéridos:</label>
-        <input type="text" id="trigliceridos" name="trigliceridos" />
+        <label for="trigliceridos">Triglicéridos (mg/dL):</label>
+        <input type="number" id="trigliceridos" name="trigliceridos" placeholder="Ej. 150" />
       </div>
 
       <div class="campo">
-        <label for="colesterol">Colesterol:</label>
-        <input type="text" id="colesterol" name="colesterol" />
+        <label for="colesterol">Colesterol total (mg/dL):</label>
+        <input type="number" id="colesterol" name="colesterol" placeholder="Ej. 200" />
       </div>
 
+      <!-- Tabaquismo -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Tabaquismo</h2>
       </div>
-      
 
       <div class="campo">
-        <label for="tabaquismo">Tabaquismo:</label>
-        <input type="text" id="tabaquismo" name="tabaquismo" />
+        <label>¿Fuma actualmente?</label>
+        <label>
+          <input type="checkbox" id="fumador" name="fumador" /> Sí
+        </label>
       </div>
 
-      <div class="campo">
-        <label for="cigarros-dia">Número de cigarros al día:</label>
-        <input type="text" id="cigarros-dia" name="cigarros-dia" />
+      <div id="tabaquismo-campos">
+        <div class="campo">
+          <label for="cigarros-dia">Número de cigarros al día:</label>
+          <input type="number" id="cigarros-dia" name="cigarros-dia" placeholder="Ej. 5" />
+        </div>
+
+        <div class="campo">
+          <label for="nivel-tabaquismo">Nivel de tabaquismo:</label>
+          <input type="text" id="nivel-tabaquismo" name="nivel-tabaquismo" placeholder="Ej. Bajo / Moderado / Alto" />
+        </div>
+
+        <div class="campo">
+          <label for="tiempo-exposicion">Tiempo de exposición (meses):</label>
+          <input type="number" id="tiempo-exposicion" name="tiempo-exposicion" placeholder="Ej. 36" />
+        </div>
       </div>
 
-      <div class="campo">
-        <label for="nivel-tabaquismo">Nivel de tabaquismo:</label>
-        <input type="text" id="nivel-tabaquismo" name="nivel-tabaquismo" />
-      </div>
-
-      <div class="campo">
-        <label for="tiempo-exposicion">Tiempo de exposición (meses):</label>
-        <input type="text" id="tiempo-exposicion" name="tiempo-exposicion" />
-      </div>
-
+      <!-- Botón de guardar -->
       <div class="boton-centrado">
-        <a href="/entrevistador/menuQ.html">
-          <button type="button">Guardar</button>
-        </a>
+        <button type="submit">Guardar</button>
       </div>
     </form>
 
-    <div class="flecha flecha-derecha">&rarr;</div>
+    <a class="flecha flecha-derecha" data-target="q4.html" data-dir="right">
+      <i class="fas fa-arrow-right"></i>
+    </a>
   </main>
 
+  <script>
+    // Animación al cambiar de página
+    const flechas = document.querySelectorAll('.flecha');
+    const zona = document.querySelector('.zona-principal');
+
+    flechas.forEach(flecha => {
+      flecha.addEventListener('click', function (e) {
+        e.preventDefault();
+        const destino = this.getAttribute('data-target');
+        const direccion = this.getAttribute('data-dir');
+
+        zona.classList.remove('slide-out-left', 'slide-out-right');
+        zona.classList.add(direccion === 'right' ? 'slide-out-left' : 'slide-out-right');
+
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 600);
+      });
+    });
+  </script>
+
+  <script>
+    const checkboxFumador = document.getElementById('fumador');
+    const camposTabaquismo = document.getElementById('tabaquismo-campos');
+
+    checkboxFumador.addEventListener('change', function () {
+      camposTabaquismo.classList.toggle('activo', this.checked);
+    });
+
+    const form = document.getElementById('form-riesgo');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const datos = {
+        presionArterial: document.getElementById('presion-arterial').value,
+        sistolica: document.getElementById('sistolica').value,
+        diastolica: document.getElementById('diastolica').value,
+        deteccionOportuna: document.getElementById('deteccion-oportuna').value,
+        perfilLipidico: document.getElementById('perfil-lipidico').value,
+        trigliceridos: document.getElementById('trigliceridos').value,
+        colesterol: document.getElementById('colesterol').value,
+        fumador: checkboxFumador.checked,
+        cigarrosDia: '',
+        nivelTabaquismo: '',
+        tiempoExposicion: ''
+      };
+
+      if (checkboxFumador.checked) {
+        const cigarros = document.getElementById('cigarros-dia').value;
+        const nivel = document.getElementById('nivel-tabaquismo').value;
+        const tiempo = document.getElementById('tiempo-exposicion').value;
+
+        if (!cigarros || !nivel || !tiempo) {
+          alert("Por favor complete todos los campos de tabaquismo.");
+          return;
+        }
+
+        datos.cigarrosDia = cigarros;
+        datos.nivelTabaquismo = nivel;
+        datos.tiempoExposicion = tiempo;
+      }
+
+      console.log("Datos recopilados:");
+      console.log(JSON.stringify(datos, null, 2));
+      alert("Datos guardados correctamente (ver consola).");
+    });
+  </script>
 </body>
+
 </html>

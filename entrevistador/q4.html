@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mediciones Corporales</title>
   <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
   <header class="encabezado">
@@ -14,59 +17,173 @@
   </header>
 
   <main class="zona-principal">
-    <div class="flecha flecha-izquierda">&larr;</div>
+    <a class="flecha flecha-izquierda" data-target="q3.html" data-dir="left">
+      <i class="fas fa-arrow-left"></i>
+    </a>
 
-    <form class="contenedor-formulario">
+    <form class="contenedor-formulario" id="form-mediciones">
 
       <div class="campo">
-        <label for="peso">Peso en kg.:</label>
-        <input type="text" id="peso" name="peso" />
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+          <option value="">Seleccione</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+        </select>
       </div>
 
       <div class="campo">
-        <label for="talla">Talla (mts.):</label>
-        <input type="text" id="talla" name="talla" />
+        <label for="talla">Talla (m):</label>
+        <input type="number" id="talla" name="talla" placeholder="Ej. 1.75" step="0.01" />
       </div>
 
       <div class="campo">
-        <label for="categoria-imc">Categoría según el IMC:</label>
-        <input type="text" id="categoria-imc" name="categoria-imc" />
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" placeholder="Ej. 70" step="0.1" />
       </div>
 
       <div class="campo">
         <label for="imc">IMC:</label>
-        <input type="text" id="imc" name="imc" />
+        <input type="text" id="imc" name="imc" readonly placeholder="Se calcula automáticamente" />
       </div>
 
       <div class="campo">
-        <label for="riesgo-cintura">Riesgo por cintura:</label>
-        <input type="text" id="riesgo-cintura" name="riesgo-cintura" />
+        <label for="categoria-imc">Categoría según IMC:</label>
+        <input type="text" id="categoria-imc" name="categoria-imc" readonly placeholder="Se calcula automáticamente" />
       </div>
 
       <div class="campo">
-        <label for="riesgo-cadera">Riesgo por cadera:</label>
-        <input type="text" id="riesgo-cadera" name="riesgo-cadera" />
+        <label for="circunferencia-cintura">Circunferencia de cintura (cm):</label>
+        <input type="number" id="circunferencia-cintura" name="circunferencia-cintura" placeholder="Ej. 85" />
       </div>
 
       <div class="campo">
-        <label for="circunferencia-cintura">Circunferencia cintura (cm):</label>
-        <input type="text" id="circunferencia-cintura" name="circunferencia-cintura" />
+        <label for="circunferencia-cadera">Circunferencia de cadera (cm):</label>
+        <input type="number" id="circunferencia-cadera" name="circunferencia-cadera" placeholder="Ej. 100" />
       </div>
 
       <div class="campo">
-        <label for="circunferencia-cadera">Circunferencia cadera (cm):</label>
-        <input type="text" id="circunferencia-cadera" name="circunferencia-cadera" />
+        <label for="icc">Índice cintura/cadera (ICC):</label>
+        <input type="text" id="icc" name="icc" readonly placeholder="Se calcula automáticamente" />
+      </div>
+
+      <div class="campo">
+        <label for="riesgo-icc">Riesgo según ICC:</label>
+        <input type="text" id="riesgo-icc" name="riesgo-icc" readonly placeholder="Se calcula automáticamente" />
       </div>
 
       <div class="boton-centrado">
-        <a href="/entrevistador/menuQ.html">
-          <button type="button">Guardar</button>
-        </a>
+        <button type="submit">Guardar</button>
       </div>
+
     </form>
 
-    <div class="flecha flecha-derecha">&rarr;</div>
+    <a class="flecha flecha-derecha" data-target="q5.html" data-dir="right">
+      <i class="fas fa-arrow-right"></i>
+    </a>
   </main>
 
+  <script>
+    function calcularIMC() {
+      const peso = parseFloat(document.getElementById('peso').value);
+      const talla = parseFloat(document.getElementById('talla').value);
+      const imcInput = document.getElementById('imc');
+      const categoriaInput = document.getElementById('categoria-imc');
+
+      if (peso > 0 && talla > 0) {
+        const imc = peso / (talla * talla);
+        imcInput.value = imc.toFixed(2);
+
+        let categoria = '';
+        if (imc < 18.5) categoria = "Bajo peso";
+        else if (imc < 24.9) categoria = "Normal";
+        else if (imc < 29.9) categoria = "Sobrepeso";
+        else if (imc < 34.9) categoria = "Obesidad I";
+        else if (imc < 39.9) categoria = "Obesidad II";
+        else categoria = "Obesidad III";
+
+        categoriaInput.value = categoria;
+      } else {
+        imcInput.value = '';
+        categoriaInput.value = '';
+      }
+    }
+
+    function calcularICC() {
+      const cintura = parseFloat(document.getElementById('circunferencia-cintura').value);
+      const cadera = parseFloat(document.getElementById('circunferencia-cadera').value);
+      const sexo = document.getElementById('sexo').value;
+      const iccInput = document.getElementById('icc');
+      const riesgoInput = document.getElementById('riesgo-icc');
+
+      if (cintura > 0 && cadera > 0 && (sexo === 'masculino' || sexo === 'femenino')) {
+        const icc = cintura / cadera;
+        iccInput.value = icc.toFixed(2);
+
+        let riesgo = '';
+        if (sexo === 'masculino') {
+          if (icc < 0.90) riesgo = "Bajo";
+          else if (icc < 1.00) riesgo = "Moderado";
+          else riesgo = "Alto";
+        } else {
+          if (icc < 0.80) riesgo = "Bajo";
+          else if (icc < 0.85) riesgo = "Moderado";
+          else riesgo = "Alto";
+        }
+
+        riesgoInput.value = riesgo;
+      } else {
+        iccInput.value = '';
+        riesgoInput.value = '';
+      }
+    }
+
+    document.getElementById('peso').addEventListener('input', calcularIMC);
+    document.getElementById('talla').addEventListener('input', calcularIMC);
+    document.getElementById('circunferencia-cintura').addEventListener('input', calcularICC);
+    document.getElementById('circunferencia-cadera').addEventListener('input', calcularICC);
+    document.getElementById('sexo').addEventListener('change', calcularICC);
+
+    document.getElementById('form-mediciones').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const datos = {
+        sexo: document.getElementById('sexo').value,
+        talla: document.getElementById('talla').value,
+        peso: document.getElementById('peso').value,
+        imc: document.getElementById('imc').value,
+        categoriaIMC: document.getElementById('categoria-imc').value,
+        circunferenciaCintura: document.getElementById('circunferencia-cintura').value,
+        circunferenciaCadera: document.getElementById('circunferencia-cadera').value,
+        icc: document.getElementById('icc').value,
+        riesgoICC: document.getElementById('riesgo-icc').value
+      };
+
+      console.log("Mediciones corporales:");
+      console.log(JSON.stringify(datos, null, 2));
+      alert("Datos guardados correctamente (ver consola).");
+    });
+  </script>
+  <script>
+    // Animación al cambiar de página
+    const flechas = document.querySelectorAll('.flecha');
+    const zona = document.querySelector('.zona-principal');
+
+    flechas.forEach(flecha => {
+      flecha.addEventListener('click', function (e) {
+        e.preventDefault();
+        const destino = this.getAttribute('data-target');
+        const direccion = this.getAttribute('data-dir');
+
+        zona.classList.remove('slide-out-left', 'slide-out-right');
+        zona.classList.add(direccion === 'right' ? 'slide-out-left' : 'slide-out-right');
+
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 600);
+      });
+    });
+  </script>
 </body>
+
 </html>
