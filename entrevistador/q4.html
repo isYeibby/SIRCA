@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mediciones Corporales</title>
-  <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -13,14 +13,15 @@
 
   <header class="encabezado">
     <img src="/img/logo.png" alt="Logo" />
-    <h1>Mediciones Corporales</h1>
+    <div style="display: flex; align-items: center; flex-grow: 1; justify-content: center;">
+      <h1 style="margin: 0;">Mediciones Corporales</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+        <!-- Icono dinámico será insertado por theme.js -->
+      </button>
+    </div>
   </header>
 
   <main class="zona-principal">
-    <a class="flecha flecha-izquierda" data-target="q3.html" data-dir="left">
-      <i class="fas fa-arrow-left"></i>
-    </a>
-
     <form class="contenedor-formulario" id="form-mediciones">
 
       <div class="campo">
@@ -77,13 +78,20 @@
       </div>
 
     </form>
-
-    <a class="flecha flecha-derecha" data-target="q5.html" data-dir="right">
-      <i class="fas fa-arrow-right"></i>
-    </a>
   </main>
 
+  <!-- Flechas de navegación -->
+  <a class="flecha flecha-izquierda" data-target="q3.html" data-dir="left">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <a class="flecha flecha-derecha" data-target="q5.html" data-dir="right">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <!-- Scripts -->
   <script>
+    // Calcular IMC
     function calcularIMC() {
       const peso = parseFloat(document.getElementById('peso').value);
       const talla = parseFloat(document.getElementById('talla').value);
@@ -109,6 +117,7 @@
       }
     }
 
+    // Calcular ICC
     function calcularICC() {
       const cintura = parseFloat(document.getElementById('circunferencia-cintura').value);
       const cadera = parseFloat(document.getElementById('circunferencia-cadera').value);
@@ -138,12 +147,14 @@
       }
     }
 
+    // Eventos
     document.getElementById('peso').addEventListener('input', calcularIMC);
     document.getElementById('talla').addEventListener('input', calcularIMC);
     document.getElementById('circunferencia-cintura').addEventListener('input', calcularICC);
     document.getElementById('circunferencia-cadera').addEventListener('input', calcularICC);
     document.getElementById('sexo').addEventListener('change', calcularICC);
 
+    // Manejo del formulario
     document.getElementById('form-mediciones').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -164,6 +175,7 @@
       alert("Datos guardados correctamente (ver consola).");
     });
   </script>
+
   <script>
     // Animación al cambiar de página
     const flechas = document.querySelectorAll('.flecha');
@@ -184,6 +196,8 @@
       });
     });
   </script>
-</body>
 
+  <script src="/js/theme.js"></script>
+
+</body>
 </html>

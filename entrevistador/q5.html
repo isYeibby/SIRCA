@@ -5,59 +5,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Actividad Física</title>
-  <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
 
   <header class="encabezado">
-    <img src=/img/logo.png alt="Logo" />
-    <h1>Actividad Física</h1>
+    <img src="/img/logo.png" alt="Logo UNISIS" />
+    <div style="display: flex; align-items: center; flex-grow: 1; justify-content: center;">
+      <h1 style="margin: 0;">Evaluación de Riesgo Cardiovascular</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+        <!-- El ícono será inyectado desde theme.js -->
+      </button>
+    </div>
   </header>
 
   <main class="zona-principal">
-    <a class="flecha flecha-izquierda" data-target="q4.html" data-dir="left">
-      <i class="fas fa-arrow-left"></i>
-    </a>
-
     <form class="contenedor-formulario" id="form-actividad">
 
-      <div class="campo">
-        <label for="tipo-actividad">Tipo de actividad física que realiza:</label>
-        <input type="text" id="tipo-actividad" name="tipo-actividad" placeholder="Ej. Caminar, correr, nadar" />
-      </div>
+      <!-- SECCIÓN: Actividad física -->
+      <section>
+        <fieldset>
+          <legend>Actividad Física</legend>
 
-      <div class="campo">
-        <label for="dias-semana">Días por semana:</label>
-        <input type="number" id="dias-semana" name="dias-semana" placeholder="Ej. 3" min="0" />
-      </div>
+          <div class="campo">
+            <label for="tipo-actividad">Tipo de actividad física que realiza:</label>
+            <input type="text" id="tipo-actividad" name="tipo-actividad" placeholder="Ej. Caminar, correr, nadar" />
+          </div>
 
-      <div class="campo">
-        <label for="minutos-dia">Minutos por día:</label>
-        <input type="number" id="minutos-dia" name="minutos-dia" placeholder="Ej. 40" min="0" />
-      </div>
+          <div class="campo">
+            <label for="dias-semana">Días por semana:</label>
+            <input type="number" id="dias-semana" name="dias-semana" placeholder="Ej. 3" min="0" />
+          </div>
 
-      <div class="campo">
-        <label for="promedio">Minutos semanales (promedio):</label>
-        <input type="text" id="promedio" name="promedio" readonly placeholder="Se calcula automáticamente" />
-      </div>
+          <div class="campo">
+            <label for="minutos-dia">Minutos por día:</label>
+            <input type="number" id="minutos-dia" name="minutos-dia" placeholder="Ej. 40" min="0" />
+          </div>
 
-      <div class="campo">
-        <label for="nivel-actividad">Nivel de actividad física:</label>
-        <input type="text" id="nivel-actividad" name="nivel-actividad" readonly
-          placeholder="Se calcula automáticamente" />
-      </div>
+          <div class="campo">
+            <label for="promedio">Minutos semanales (promedio):</label>
+            <input type="text" id="promedio" name="promedio" readonly placeholder="Se calcula automáticamente" />
+          </div>
 
-      <div class="boton-centrado">
-        <button type="submit">Guardar</button>
-      </div>
+          <div class="campo">
+            <label for="nivel-actividad">Nivel de actividad física:</label>
+            <input type="text" id="nivel-actividad" name="nivel-actividad" readonly
+              placeholder="Se calcula automáticamente" />
+          </div>
+
+          <div class="boton-centrado">
+            <button type="button" onclick="guardarActividad()">Guardar actividad física</button>
+          </div>
+
+        </fieldset>
+      </section>
+
     </form>
-
-    <a class="flecha flecha-derecha" data-target="menuQ.html" data-dir="right">
-      <i class="fas fa-arrow-right"></i>
-    </a>
   </main>
 
+  <!-- Navegación -->
+  <a class="flecha flecha-izquierda" data-target="q4.html" data-dir="left">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <a class="flecha flecha-derecha" data-target="menuQ.html" data-dir="right">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <!-- Scripts -->
   <script>
     const diasInput = document.getElementById("dias-semana");
     const minutosInput = document.getElementById("minutos-dia");
@@ -87,9 +103,7 @@
     diasInput.addEventListener("input", calcularPromedio);
     minutosInput.addEventListener("input", calcularPromedio);
 
-    document.getElementById("form-actividad").addEventListener("submit", function (e) {
-      e.preventDefault();
-
+    function guardarActividad() {
       const datos = {
         tipoActividad: document.getElementById("tipo-actividad").value,
         diasSemana: document.getElementById("dias-semana").value,
@@ -98,11 +112,11 @@
         nivelActividad: document.getElementById("nivel-actividad").value
       };
 
-      console.log("Actividad física:");
-      console.log(JSON.stringify(datos, null, 2));
-      alert("Datos guardados correctamente (ver consola).");
-    });
+      console.log("Actividad física:", JSON.stringify(datos, null, 2));
+      alert("Datos de actividad física guardados correctamente.");
+    }
   </script>
+
   <script>
     // Animación al cambiar de página
     const flechas = document.querySelectorAll('.flecha');
@@ -119,10 +133,12 @@
 
         setTimeout(() => {
           window.location.href = destino;
-        }, 600);
+        }, 800);
       });
     });
   </script>
+
+  <script src="/js/theme.js"></script>
 </body>
 
 </html>

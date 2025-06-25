@@ -66,3 +66,51 @@ function actualizarNumeros(contenedor) {
     if (numero) numero.textContent = index + 1;
   });
 }
+
+function guardarSeccion(idSeccion) {
+  const seccion = document.getElementById(idSeccion);
+  const inputs = seccion.querySelectorAll('input, select');
+  let valid = true;
+  let datos = {};
+
+  inputs.forEach(input => {
+    if (!input.checkValidity()) {
+      input.classList.add('input-error');
+      valid = false;
+    } else {
+      input.classList.remove('input-error');
+      datos[input.name] = input.value;
+    }
+  });
+
+  if (!valid) {
+    alert('Por favor complete todos los campos requeridos de esta sección.');
+    return;
+  }
+
+  localStorage.setItem(idSeccion, JSON.stringify(datos));
+  alert(`Sección "${idSeccion}" guardada con éxito.`);
+}
+
+function guardarTodo() {
+  const form = document.getElementById('formulario');
+
+  if (!form.checkValidity()) {
+    alert('Por favor complete todos los campos antes de guardar.');
+    return false;
+  }
+
+  const formData = new FormData(form);
+  const datos = {};
+
+  for (let [clave, valor] of formData.entries()) {
+    datos[clave] = valor;
+  }
+
+  localStorage.setItem('formularioCompleto', JSON.stringify(datos));
+  alert('Formulario completo guardado correctamente.');
+  return true;
+}
+
+
+

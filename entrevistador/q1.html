@@ -1,122 +1,140 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Información del Paciente</title>
-  <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
 </head>
 
 <body>
 
   <header class="encabezado">
     <img src="/img/logo.png" alt="Logo UNISIS" />
-    <h1>Evaluación de Riesgo Cardiovascular</h1>
+    <div style="display: flex; align-items: center; flex-grow: 1; justify-content: center;">
+      <h1 style="margin: 0;">Evaluación de Riesgo Cardiovascular</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+        <!-- Ícono inyectado por theme.js -->
+      </button>
+    </div>
   </header>
 
   <main class="zona-principal">
-    <a class="flecha flecha-izquierda" data-target="menuQ.html" data-dir="left">
-      <i class="fas fa-arrow-left"></i>
-    </a>
-
     <form class="contenedor-formulario" id="formulario">
+
+      <!-- SECCIÓN ENTREVISTADOR -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Información del Entrevistador</h2>
+        <button type="button" class="btn-discreto" onclick="guardarSeccion('seccion-entrevistador')">💾 Guardar sección</button>
       </div>
 
-      <div class="campo">
-        <label for="entrevistador">Entrevistador:</label>
-        <input type="text" id="entrevistador" name="entrevistador" required />
+      <div id="seccion-entrevistador">
+        <div class="campo">
+          <label for="entrevistador">Entrevistador:</label>
+          <input type="text" id="entrevistador" name="entrevistador" required />
+        </div>
+
+        <div class="campo">
+          <label for="numero-caso">N° de caso:</label>
+          <input type="text" id="numero-caso" name="numero-caso" required />
+        </div>
+
+        <div class="campo">
+          <label for="fecha-evaluacion">Fecha evaluación:</label>
+          <input type="date" id="fecha-evaluacion" name="fecha-evaluacion" required />
+        </div>
       </div>
 
-      <div class="campo">
-        <label for="numero-caso">N° de caso:</label>
-        <input type="text" id="numero-caso" name="numero-caso" required />
-      </div>
-
-      <div class="campo">
-        <label for="fecha-evaluacion">Fecha evaluación:</label>
-        <input type="date" id="fecha-evaluacion" name="fecha-evaluacion" required />
-      </div>
-
+      <!-- SECCIÓN PACIENTE -->
       <div class="subtitulo-con-boton">
         <h2 class="subtitulo">Información General del Paciente</h2>
+        <button type="button" class="btn-discreto" onclick="guardarSeccion('seccion-paciente')">💾 Guardar sección</button>
       </div>
 
-      <div class="campo">
-        <label for="nombre">Nombre(s):</label>
-        <input type="text" id="nombre" name="nombre" required />
+      <div id="seccion-paciente">
+        <div class="campo">
+          <label for="nombre">Nombre(s):</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+
+        <div class="campo">
+          <label for="apellido-paterno">Apellido paterno:</label>
+          <input type="text" id="apellido-paterno" name="apellido-paterno" required />
+        </div>
+
+        <div class="campo">
+          <label for="apellido-materno">Apellido materno:</label>
+          <input type="text" id="apellido-materno" name="apellido-materno" required />
+        </div>
+
+        <div class="campo">
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad" min="0" required />
+        </div>
+
+        <div class="campo">
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" name="sexo" required>
+            <option value="">Seleccione</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="O">Otro</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+          <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required />
+        </div>
+
+        <div class="campo">
+          <label for="area">Área:</label>
+          <input type="text" id="area" name="area" placeholder="Ej. Estudiante" required />
+        </div>
+
+        <div class="campo">
+          <label for="estado-civil">Estado civil:</label>
+          <select id="estado-civil" name="estado-civil" required>
+            <option value="">Seleccione</option>
+            <option value="soltero">Soltero(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="seguro">Cobertura médica:</label>
+          <select id="seguro" name="seguro" required>
+            <option value="">Seleccione</option>
+            <option value="publico">Pública</option>
+            <option value="privado">Privada</option>
+            <option value="ninguno">Ninguna</option>
+          </select>
+        </div>
       </div>
 
-      <div class="campo">
-        <label for="apellido-paterno">Apellido paterno:</label>
-        <input type="text" id="apellido-paterno" name="apellido-paterno" required />
-      </div>
-
-      <div class="campo">
-        <label for="apellido-materno">Apellido materno:</label>
-        <input type="text" id="apellido-materno" name="apellido-materno" required />
-      </div>
-
-      <div class="campo">
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" min="0" required />
-      </div>
-
-      <div class="campo">
-        <label for="sexo">Sexo:</label>
-        <select id="sexo" name="sexo" required>
-          <option value="">Seleccione</option>
-          <option value="M">Masculino</option>
-          <option value="F">Femenino</option>
-          <option value="O">Otro</option>
-        </select>
-      </div>
-
-      <div class="campo">
-        <label for="fecha-nacimiento">Fecha de nacimiento:</label>
-        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required />
-      </div>
-
-      <div class="campo">
-        <label for="area">Área:</label>
-        <input type="text" id="area" name="area" placeholder="Ej. Estudiante" required />
-      </div>
-
-      <div class="campo">
-        <label for="estado-civil">Estado civil:</label>
-        <select id="estado-civil" name="estado-civil" required>
-          <option value="">Seleccione</option>
-          <option value="soltero">Soltero(a)</option>
-          <option value="casado">Casado(a)</option>
-          <option value="otro">Otro</option>
-        </select>
-      </div>
-
-      <div class="campo">
-        <label for="seguro">Cobertura médica:</label>
-        <select id="seguro" name="seguro" required>
-          <option value="">Seleccione</option>
-          <option value="publico">Pública</option>
-          <option value="privado">Privada</option>
-          <option value="ninguno">Ninguna</option>
-        </select>
-      </div>
-
+      <!-- GUARDAR TODO -->
       <div class="boton-centrado">
-        <button type="submit">Guardar</button>
+        <button type="button" onclick="guardarTodo()">Guardar Todo</button>
       </div>
     </form>
-
-    <a class="flecha flecha-derecha" data-target="q2.html" data-dir="right">
-      <i class="fas fa-arrow-right"></i>
-    </a>
   </main>
 
+  <!-- Flechas navegación -->
+  <a class="flecha flecha-izquierda" data-target="menuQ.html" data-dir="left">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <a class="flecha flecha-derecha" data-target="q2.html" data-dir="right">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <script src="/js/background.js"></script>
+  <script src="/js/theme.js"></script>
+
   <script>
-    // Animación al cambiar de página
+    // Animación de flechas
     const flechas = document.querySelectorAll('.flecha');
     const zona = document.querySelector('.zona-principal');
 
@@ -134,29 +152,6 @@
         }, 600);
       });
     });
-
-    // Guardar datos del formulario
-    document.getElementById('formulario').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      if (!this.checkValidity()) {
-        alert("Por favor, completa todos los campos requeridos.");
-        return;
-      }
-
-      const datos = {};
-      new FormData(this).forEach((value, key) => {
-        datos[key] = value;
-      });
-
-      // Guardar en localStorage como JSON
-      localStorage.setItem("datosPaciente", JSON.stringify(datos));
-      alert("Datos guardados correctamente en JSON.");
-
-      // Ir a la siguiente página
-      document.querySelector('.flecha-derecha').click();
-    });
   </script>
-
 </body>
 </html>

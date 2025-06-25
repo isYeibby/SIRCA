@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antecedentes Patológicos</title>
-  <link rel="stylesheet" href="/css/styleqs.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -13,14 +13,16 @@
 
   <header class="encabezado">
     <img src="/img/logo.png" alt="Logo" />
-    <h1>Antecedentes Patológicos</h1>
+
+    <div style="display: flex; align-items: center; flex-grow: 1; justify-content: center;">
+      <h1 style="margin: 0;">Antecedentes Patológicos</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+        <!-- Ícono insertado dinámicamente por theme.js -->
+      </button>
+    </div>
   </header>
 
   <main class="zona-principal">
-    <a class="flecha flecha-izquierda" data-target="q1.html" data-dir="left">
-      <i class="fas fa-arrow-left"></i>
-    </a>
-
     <form class="contenedor-formulario">
 
       <!-- HTA -->
@@ -56,12 +58,18 @@
         <button type="submit">Guardar</button>
       </div>
     </form>
-
-    <a class="flecha flecha-derecha" data-target="q3.html" data-dir="right">
-      <i class="fas fa-arrow-right"></i>
-    </a>
   </main>
 
+  <!-- Flechas de navegación FUERA del <main> -->
+  <a class="flecha flecha-izquierda" data-target="q1.html" data-dir="left">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <a class="flecha flecha-derecha" data-target="q3.html" data-dir="right">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <!-- Scripts -->
   <script>
     // Animación al cambiar de página
     const flechas = document.querySelectorAll('.flecha');
@@ -82,7 +90,10 @@
       });
     });
   </script>
+
+  <script src="/js/background.js"></script>
+  <script src="/js/theme.js"></script>
+
 </body>
-<script src=/js/background.js></script>
 
 </html>
