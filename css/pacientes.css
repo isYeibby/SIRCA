@@ -169,3 +169,15 @@ a.sin\ iniciar:hover {
 .search-container button:hover {
     background-color: #0056b3;
 }
+
+/* Cambia el color de las filas pares en modo oscuro */
+[data-theme="dark"] tr:nth-child(even) {
+    background-color: #23243a !important;
+}
+[data-theme="dark"] tr:hover {
+    background-color: #2e2e42 !important;
+}
+[data-theme="dark"] thead {
+    background-color: #23243a !important;
+    color: #fff !important;
+}
