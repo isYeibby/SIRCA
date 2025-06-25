@@ -47,83 +47,76 @@
         </div>
 
         <div class="profile-container">
-        <!-- Columnas izquierda y derecha -->
-        <div class="profile-left">
-            <!-- Perfil con círculo (avatar + stats) -->
-            <div class="profile-stats">
-            <div class="profile-avatar-stats">
-                <div class="profile-avatar">
-                <svg class="profile-icon" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="11" stroke="#8ab4f8" stroke-width="2" fill="#f5f7fa"/>
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#8ab4f8"/>
-                    <path d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4v1H4v-1z" fill="#8ab4f8"/>
-                </svg>
+            <div class="profile-left">
+                <div class="profile-stats">
+                    <div class="profile-avatar-stats">
+                        <div class="profile-avatar">
+                            <svg class="profile-icon" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="11" stroke="#8ab4f8" stroke-width="2" fill="#f5f7fa"/>
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#8ab4f8"/>
+                                <path d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4v1H4v-1z" fill="#8ab4f8"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="Apellido-paterno">Apellido paterno</label>
+                            <input id="Apellido-paterno" type="text" value="John" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Apellido-materno">Apellido materno</label>
+                            <input id="Apellido-materno" type="text" value="Smith" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Nombre">Nombre</label>
+                            <input id="Nombre" type="text" value="Chorch" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Matricula">Matricula</label>
+                            <input id="Matricula" type="text" value="00000000" readonly />
+                        </div>
+                    </form>
                 </div>
             </div>
-            </div>
 
-            <!-- Cuadro 1 -->
-            <div class="profile-card">
-            <form class="profile-form">
-                <div class="form-group">
-                <label for="Apellido-paterno">Apellido paterno</label>
-                <input id="Apellido-paterno" type="text" value="John" />
+            <div class="profile-right">
+                <div class="profile-card">
+                    <form class="profile-form">
+                        <h3>Mis Datos</h3>
+                        <div class="form-group">
+                            <label for="Edad">Edad</label>
+                            <input id="Edad" type="text" value="21" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Sexo">Sexo</label>
+                            <select id="Sexo" disabled>
+                                <option>M</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Alergias">Alergias</label>
+                            <input id="Alergias" type="text" value="Penicilina" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Domicilio">Domicilio</label>
+                            <input id="Domicilio" type="text" value="Col. Las Flores #606" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Teléfono">Teléfono </label>
+                            <input id="Teléfono" type="text" value="(+52) 900 123 45 67" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="Correo">Correo </label>
+                            <input id="Correo" type="email" value="ejemplo@correo.com" readonly />
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                <label for="Apellido-materno">Apellido materno</label>
-                <input id="Apellido-materno" type="text" value="Smith" />
-                </div>
-                <div class="form-group">
-                <label for="Nombre">Nombre</label>
-                <input id="Nombre" type="text" value="Chorch" />
-                </div>
-                <div class="form-group">
-                <label for="Matricula">Matricula</label>
-                <input id="Matricula" type="text" value="00000000" />
-                </div>
-            </form>
-            </div>
-        </div>
-
-        <div class="profile-right">
-            
-
-            <!-- Cuadro 2 debajo del avatar -->
-            <div class="profile-card">
-            <form class="profile-form">
-                <h3>Mis Datos</h3>
-                <div class="form-group">
-                <label for="Edad">Edad</label>
-                <input id="Edad" type="text" value="21" />
-                </div>
-                <div class="form-group">
-                <label for="Sexo">Sexo</label>
-                <select id="Sexo">
-                    <option>M</option>
-                    <option>F</option>
-                </select>
-                </div>
-                <div class="form-group">
-                <label for="Alergias">Alergias</label>
-                <input id="Alergias" type="text" value="Penicilina" />
-                </div>
-                <div class="form-group">
-                <label for="Domicilio">Domicilio</label>
-                <input id="Domicilio" type="text" value="Col. Las Flores #606" />
-                </div>
-                <div class="form-group">
-                <label for="Teléfono">Teléfono </label>
-                <input id="Teléfono" type="text" value="(+52) 900 123 45 67" />
-                </div>
-                <div class="form-group">
-                <label for="Correo">Correo </label>
-                <input id="Correo" type="email" value="ejemplo@correo.com" />
-                </div>
-            </form>
             </div>
         </div>
-        </div>
-
     </div>
 
     <script src="/js/theme.js"></script>
