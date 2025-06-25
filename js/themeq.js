@@ -43,4 +43,5 @@ window.onload = () => {
     html.setAttribute("data-theme", savedTheme);
     toggleBtn.innerHTML = getIconSVG(savedTheme);
     toggleBtn.setAttribute("aria-pressed", savedTheme === "dark" ? "true" : "false");
+    toggleBtn.addEventListener("click", toggleTheme);   
 };
