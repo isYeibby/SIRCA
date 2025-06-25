@@ -44,3 +44,8 @@ cards.forEach((card) => {
         }
     });
 });
+
+// Navegación al expediente del paciente
+    document.getElementById('btnVerExpediente').addEventListener('click', function() {
+        window.location.href = '/paciente/expediente.html';
+    });
